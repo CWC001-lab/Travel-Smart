@@ -1,0 +1,25 @@
+.trips-catalog {
+  display: flex;
+  height: 100vh;
+  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.sidebar-open {
+  margin-left: 300px;
+}
+
+.main-content {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 20px;
+  padding-top: 80px; /* Add top padding to account for the fixed search bar */
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  transition: margin-left 0.3s ease-in-out;
+}
+
+.search-container {
+  align-self: flex-end;
+  margin-bottom: 20px;
+}
