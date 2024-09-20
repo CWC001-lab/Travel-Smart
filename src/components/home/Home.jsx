@@ -1,4 +1,4 @@
-import React, { useCallback, useState} from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Home.css";
 import img1 from "../../assets/img/img1.jpg";
@@ -6,6 +6,7 @@ import Asia from "../../assets/img/Asia.jpg";
 import { FaFacebook, FaTwitter, FaAccessibleIcon } from "react-icons/fa";
 import ContinentModal from './ContinentModal';
 import TourCard from './TourCard';
+import { Newsletter } from "./Newsletter";
 
 const Home = () => {
   const containerVariants = {
@@ -38,21 +39,54 @@ const Home = () => {
   const [hoveredContinent, setHoveredContinent] = useState(null);
   const [selectedContinent, setSelectedContinent] = useState(null);
 
-  // const [currentTour, setCurrentTour] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = [
+    { image: img1, location: 'Bahamas', description: 'stylish', title: 'Little nice beach' },
+    { image: img1, location: 'Maldives', description: 'luxurious', title: 'Crystal clear waters' },
+    { image: img1, location: 'Bali', description: 'exotic', title: 'Tropical paradise' },
+    // Add more slides as needed
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+    }, 5000); // Change slide every 5 seconds
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const slideVariants = {
+    enter: (direction) => {
+      return {
+        x: direction > 0 ? '100%' : '-100%',
+        opacity: 0
+      };
+    },
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1
+    },
+    exit: (direction) => {
+      return {
+        zIndex: 0,
+        x: direction < 0 ? '100%' : '-100%',
+        opacity: 0
+      };
+    }
+  };
+
+  const swipeConfidenceThreshold = 10000;
+  const swipePower = (offset, velocity) => {
+    return Math.abs(offset) * velocity;
+  };
+
   const tours = [
     { id: 1, title: "Tour 1", description: "Experience the beauty of Tour 1", image: img1 },
     { id: 2, title: "Tour 2", description: "Discover the wonders of Tour 2", image: img1 },
     { id: 3, title: "Tour 3", description: "Explore the mysteries of Tour 3", image: img1 },
     { id: 4, title: "Tour 4", description: "Adventure awaits in Tour 4", image: img1 },
   ];
-
-  // useEffect(() => {
-  //   const timer = setInterval(() => {
-  //     setCurrentTour((prevTour) => (prevTour + 1) % tours.length);
-  //   }, 3000); // Change slide every 3 seconds
-
-  //   return () => clearInterval(timer);
-  // }, [tours.length]);
 
   const handleContinentHover = (continent) => {
     setHoveredContinent(continent);
@@ -83,15 +117,62 @@ const Home = () => {
             Book a Tour
           </motion.button>
         </motion.div>
+        
         <motion.div className="image-container" variants={containerVariants}>
-          <motion.div className="image-wrapper" variants={itemVariants}>
-            <img src={img1} alt="First destination" className="large-image" />
-            <div className="image-text">
-              <motion.p variants={itemVariants}>Bahamas</motion.p>
-              <motion.p variants={itemVariants}>stylish</motion.p>
-              <motion.h1 variants={itemVariants}>Little nice beach</motion.h1>
-            </div>
-          </motion.div>
+          <div className="slider-container">
+            <AnimatePresence initial={false} custom={currentSlide}>
+              <motion.div 
+                key={currentSlide}
+                className="slide"
+                custom={currentSlide}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{
+                  x: { type: "spring", stiffness: 300, damping: 30 },
+                  opacity: { duration: 1 }
+                }}
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={1}
+                onDragEnd={(e, { offset, velocity }) => {
+                  const swipe = swipePower(offset.x, velocity.x);
+
+                  if (swipe < -swipeConfidenceThreshold) {
+                    setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+                  } else if (swipe > swipeConfidenceThreshold) {
+                    setCurrentSlide((prevSlide) => (prevSlide - 1 + slides.length) % slides.length);
+                  }
+                }}
+              >
+                <img src={slides[currentSlide].image} alt={slides[currentSlide].title} className="slide-image" />
+                <div className="slide-text">
+                  <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1 }}
+                  >
+                    {slides[currentSlide].location}
+                  </motion.p>
+                  <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1 }}
+                  >
+                    {slides[currentSlide].description}
+                  </motion.p>
+                  <motion.h1
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1 }}
+                  >
+                    {slides[currentSlide].title}
+                  </motion.h1>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
           <motion.div className="image-wrapper2" variants={itemVariants}>
             <img src={Asia} alt="Second destination" className="half-image" />
             <div className="image-text">
@@ -252,6 +333,9 @@ const Home = () => {
           ))}
         </div>
       </section>
+
+<Newsletter />
+
     </motion.div>
   );
 };

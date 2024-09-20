@@ -10,7 +10,7 @@ body{
   align-items: center;
   padding: 20px;
   background-color: white;
-
+margin-top: 5%;
   width: 100%;
   
 }
@@ -21,7 +21,7 @@ body{
 }
 
 .section-title {
-  text-align: center;
+  text-align: start;
   margin-bottom: 20px;
   color: #1a2a6c;
   font-size: 2rem;

@@ -1,6 +1,6 @@
 .search-container {
   position: fixed;
-  top: 100px;
+  top: 80px;
 right: 80px; /* Positioned right next to the sidebar toggle button */
   z-index: 1000;
   display: flex;

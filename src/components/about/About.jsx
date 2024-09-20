@@ -23,9 +23,13 @@ const About = () => {
             <main className="about-header">
 
               <div className='Rates'>
+              <h1>A Paradise Village</h1>
 
-              </div>
-                <h1>A Paradise Village</h1>
+              <p>
+                Discover a hidden gem nestled in nature's embrace. Our paradise village offers a perfect blend of tranquility and adventure, where every moment becomes a cherished memory.
+              </p>
+
+              
                 <div className="statistics">
                     <div className="stat">
                         <h3>10,000+</h3>
@@ -44,9 +48,49 @@ const About = () => {
                         <p>Awards</p>
                     </div>
                 </div>
-                <p className="description">
-                    Authentic Culture and Charm, Where Beauty Knows No Bounds
-                </p>
+                <button className="explore-button">Explore Paradise</button>
+              </div>
+
+
+              <div className='CombinedImages'>
+  <div className='First-main-image'>
+    <img src={img1} alt="Main scenery" />
+  </div>
+  <div className='First-top-left-image'>
+    <img src={Asia} alt="Top left scenery" />
+  </div>
+  <div className='First-bottom-left-image'>
+    <img src={img3} alt="Bottom right scenery" />
+  </div>
+
+  <div className='First-middle-right-image'>
+    <img src={img3} alt="Bottom right scenery" />
+  </div>
+
+</div>
+
+
+              <div className='TextHolder'>
+  <h2>
+    Discover the World with Travel Smart: Your Gateway to Authentic Experiences
+  </h2>
+
+  <p>
+    At Travel Smart, we believe in creating unforgettable journeys that go beyond the ordinary. Our passion for exploration and cultural immersion drives us to craft unique travel experiences that connect you with the heart and soul of each destination.
+  </p>
+
+  <ul>
+    <li>Expertly Curated Itineraries</li>
+    <li>Local Guides and Authentic Experiences</li>
+    <li>Sustainable and Responsible Travel</li>
+    <li>24/7 Customer Support</li>
+  </ul>
+
+  <p>
+    Whether you're seeking adventure in remote landscapes, cultural enrichment in historic cities, or relaxation on pristine beaches, Travel Smart is your trusted companion. We combine our deep knowledge of global destinations with personalized service to ensure every journey is tailored to your unique preferences and travel style.
+  </p>
+              </div>
+
             </main>
 
             <section className="endless-beauty">
@@ -73,6 +117,8 @@ const About = () => {
     <img src={img3} alt="Bottom right scenery" />
   </div>
 </div>
+
+
 <div className='WhyUs'>
 
 <h1>Perfect Destination for Peaceful Vacation</h1>

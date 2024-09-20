@@ -53,30 +53,235 @@
   background-color: #ffffff;
   color: rgb(12, 12, 12);
   padding: 40px;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.Rates {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: transparent;
+  max-width: 30%;
+  margin: 0 auto;
+}
+
+.Rates h1 {
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.Rates > p {
+  font-size: 1.1rem;
+  color: #555;
+  text-align: center;
+  max-width: 800px;
+  margin-bottom: 30px;
 }
 
 .statistics {
   display: flex;
   justify-content: space-around;
-  margin: 20px 0;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 30px;
 }
 
 .stat {
   flex: 1;
+  min-width: 40%;
+  max-width: 250px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 5px;
   margin: 10px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
 }
 
-h1 {
-  font-size: 2.5rem;
+.stat:hover {
+  transform: translateY(-5px);
 }
 
-h2 {
-  font-size: 1.5rem;
-  margin: 10px 0;
+.stat h3 {
+  font-size: 1rem;
+  color: #3498db;
+  margin-bottom: 10px;
+}
+
+.stat p {
+  font-size: 1rem;
+  color: #7f8c8d;
+}
+
+.explore-button {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 12px 0px;
+  width: 60%;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.explore-button:hover {
+  background-color: #27ae60;
+}
+
+@media (max-width: 768px) {
+  .Rates h1 {
+    font-size: 2rem;
+  }
+
+  .Rates > p {
+    font-size: 1rem;
+  }
+
+  .stat {
+    min-width: 150px;
+  }
+
+  .stat h3 {
+    font-size: 1.5rem;
+  }
+
+  .stat p {
+    font-size: 0.9rem;
+  }
+}
+
+.TextHolder {
+  max-width: 35%;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+.TextHolder h2 {
+  font-size: 1.2rem;
+  font-weight: 1000;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+
+}
+
+.TextHolder p {
+  font-size: 0.9rem;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+.TextHolder ul {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 20px;
+  text-align: start;
+}
+
+.TextHolder li {
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+  position: relative;
+  padding-left: 30px;
+}
+
+.TextHolder li:last-child {
+  border-bottom: none;
+}
+
+.TextHolder li::before {
+  content: '✈️';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 768px) {
+  .TextHolder h2 {
+    font-size: 2rem;
+  }
+
+  .TextHolder p,
+  .TextHolder li {
+    font-size: 1rem;
+  }
 }
 
 .description {
   margin: 20px 0;
+}
+
+.CombinedImages {
+  position: relative;
+  width: 40%;
+  height: 80vh; /* Adjust as needed */
+  overflow: hidden;
+}
+
+.First-main-image {
+  margin-top:30%;
+  width: 100%;
+  height: 50vh;
+  border-radius: 10px; /* Optional: for rounded corners */
+  justify-content: center;
+align-items: center;
+}
+
+.First-main-image img {
+  width: 90%;
+  height: 100%;
+  border-radius: 10px; /* Optional: for rounded corners */
+  object-fit: cover;
+}
+
+.First-top-left-image,
+.First-bottom-left-image,
+.First-middle-right-image {
+  border: 3px white solid;
+  position: absolute;
+  width: 40%; /* Adjust size as needed */
+  height: 30%; /* Adjust size as needed */
+  overflow: hidden;
+  border-radius: 10px; /* Optional: for rounded corners */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: for shadow effect */
+}
+
+.First-top-left-image {
+  top: 10%;
+  left: -5%;
+}
+
+.First-bottom-left-image {
+  bottom: -5%;
+  left: -5%;
+}
+
+.First-middle-right-image {
+  top: 40%;
+  right: -5%;
+}
+
+.First-top-left-image img,
+.First-bottom-left-image img,
+.First-middle-right-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .endless-beauty {
@@ -139,7 +344,6 @@ height:6vh;
   background-color: #dafacd; /* Lighter shade for hover effect */
 }
 
-
 .why-village{
 display: flex;
 justify-content: center;
@@ -200,7 +404,6 @@ align-items: center;
   object-fit: cover;
 }
 
-
 .WhyUs{
   width: 40%;
   justify-content: center;
@@ -212,7 +415,6 @@ align-items: center;
   text-align: start;
   width: 80%;
 }
-
 
 .features {
   display: flex;
@@ -256,7 +458,6 @@ figure figcaption{
   width: 80%;
   text-align: justify;
 }
-
 
 h3 {
   margin: 10px 0;

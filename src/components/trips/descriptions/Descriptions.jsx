@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import './Descriptions.css';
 
 const Descriptions = ({ place, onClose }) => {
+  if (!place) return null;
+
   return (
     <motion.div
       className="descriptions-overlay"

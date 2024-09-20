@@ -1,46 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import axios from 'axios';
-import Descriptions from '../descriptions/Descriptions';
 import './Card.css';
 
-const Card = ({ place, index }) => {
-  const [showDescription, setShowDescription] = useState(false);
-
+const Card = ({ place, index, onPlaceSelect }) => {
   return (
-    <>
-      <motion.div
-        className="card"
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: index * 0.2 }}
-      >
-        <img src={place.image} alt={place.name} className="card-image" />
-        <div className="card-content">
-          <h3 className="card-title">{place.name}</h3>
-          <p className="card-location">{place.country}</p>
-          <span className="card-rating">{parseFloat(place.rating).toFixed(1)} ⭐</span>
-          <button
-            className="card-details-button"
-            onClick={() => setShowDescription(true)}
-          >
-            View Details
-          </button>
-        </div>
-      </motion.div>
-      <AnimatePresence>
-        {showDescription && (
-          <Descriptions
-            place={place}
-            onClose={() => setShowDescription(false)}
-          />
-        )}
-      </AnimatePresence>
-    </>
+    <motion.div
+      className="card"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.2 }}
+    >
+      <img src={place.image} alt={place.name} className="card-image" />
+      <div className="card-content">
+        <h3 className="card-title">{place.name}</h3>
+        <p className="card-location">{place.country}</p>
+        <span className="card-rating">{parseFloat(place.rating).toFixed(1)} ⭐</span>
+        <button
+          className="card-details-button"
+          onClick={() => onPlaceSelect(place)}
+        >
+          View Details
+        </button>
+      </div>
+    </motion.div>
   );
 };
 
-const CardList = ({ filters, searchTerm }) => {
+const CardList = ({ filters, searchTerm, onPlaceSelect }) => {
   const [places, setPlaces] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -158,7 +145,12 @@ const CardList = ({ filters, searchTerm }) => {
         <h2 className="section-title">Popular Destinations</h2>
         <div className="cards">
           {filteredPlaces.map((place, index) => (
-            <Card key={place.id} place={place} index={index} />
+            <Card 
+              key={place.id} 
+              place={place} 
+              index={index} 
+              onPlaceSelect={onPlaceSelect}
+            />
           ))}
         </div>
       </div>

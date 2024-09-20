@@ -2,12 +2,14 @@ import React, { useState, useCallback } from 'react';
 import Sidebar from '../filters/sidebar/SideBar';
 import CardList from '../cards/Card';
 import Search from '../filters/search/Search';
+import Descriptions from '../descriptions/Descriptions';
 import './TripsCatalog.css';
 
 const TripsCatalog = () => {
   const [filters, setFilters] = useState({ rating: 0, country: '', tourTypes: [] });
   const [searchTerm, setSearchTerm] = useState('');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [selectedPlace, setSelectedPlace] = useState(null);
 
   const handleFilterChange = useCallback((newFilters) => {
     setFilters(newFilters);
@@ -21,6 +23,14 @@ const TripsCatalog = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+  const handlePlaceSelect = (place) => {
+    setSelectedPlace(place);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedPlace(null);
+  };
+
   return (
     <div className={`trips-catalog ${isSidebarOpen ? 'sidebar-open' : ''}`}>
       <Sidebar 
@@ -30,8 +40,18 @@ const TripsCatalog = () => {
       />
       <Search onSearch={handleSearch} />
       <div className="main-content">
-        <CardList filters={filters} searchTerm={searchTerm} />
+        <CardList 
+          filters={filters} 
+          searchTerm={searchTerm} 
+          onPlaceSelect={handlePlaceSelect}
+        />
       </div>
+      {selectedPlace && (
+        <Descriptions 
+          place={selectedPlace} 
+          onClose={handleCloseModal}
+        />
+      )}
     </div>
   );
 };

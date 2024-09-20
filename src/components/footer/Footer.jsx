@@ -1,55 +1,71 @@
-/* eslint-disable react/style-prop-object */
-import React from 'react';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
-import './Footer.css'; 
+import React from "react";
+import { FaFacebookF, FaTwitter, FaYoutube} from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import "./Footer.css";
 
 const Footer = () => {
   return (
-    <div>
-      <section className="footer">
-        <footer>
-            <div className="text">
-                <h1>Travel Smart &copy;</h1>
-            </div>
-          <div className="footer-content">
-            {/* About Section */}
-            <div className="footer-section">
-              <h3>About Us</h3>
-              <p>Explore the world with us! Discover breathtaking destinations, hidden gems, and travel tips to make your adventures unforgettable.</p>
-            </div>
-
-            {/* Quick Links */}
-            <div className="footer-section">
-              <h3>Quick Links</h3>
-              <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About Us</a></li>
-                <li><a href="/review">Travel Review</a></li>
-                <li><a href="/catalog">Trip Catalog</a></li>
-                <li><a href="/contact">Contact Us</a></li>
-              </ul>
-            </div>
-
-            {/* Social Media */}
-            <div className="footer-section">
-              <h3>Follow Us</h3>
-              <p>Stay connected for the latest travel updates!</p>
-              <div className="social-icons">
-                <a href="https://www.facebook.com/"><FaFacebook width="90px" height="40px" /></a>
-                <a href="https://www.twitter.com/"><FaTwitter width="40px" height="40px" /></a>
-                <a href="https://www.instagram.com/"><FaInstagram width="40px" height="40px" /></a>
-                <a href="https://www.linkedin.com/"><FaLinkedin width="40px" height="40px" /></a>
-              </div>
+    <>
+      <footer>
+        <div className="footer-cont-container">
+          <div className="footer-cont">
+            <h4>Travel Smart</h4>
+Taking you on a Tour Around 
+            <br /> <br />
+            <div style={{ display: "flex", justifyContent: "space-evenly" }}>
+              <FaFacebookF />
+              <FaTwitter />
+              <FaYoutube />
             </div>
           </div>
-          
-          <div className="footer-bottom">
-            <p>&copy; 2024 Travel Smart. All Rights Reserved. | <a href="...">Privacy Policy</a> | <a href="...">Terms of Service</a></p>
+          <div className="footer-cont">
+            <h4>Get in Touch</h4>
+            <hr />
+            <p>Location:</p>
+            Lorem ipsum dolor sit amet consectetur adipisi jjuhihijin. <br />{" "}
+            <br />
+            <p>Contact:</p>
+            Phone : +012 345 6789 0123 <br />
+            Email : info@example.com
           </div>
-        </footer>
-      </section>
-    </div>
+          <div className="footer-cont">
+            <h4>Quick Links</h4>
+            <hr />
+            <ul>
+              <li>
+                <a href="/">Home</a>
+              </li>
+              <li>
+                <a href="/About">About</a>
+              </li>
+              <li>
+                <a href="/Trips">Trips</a>
+              </li>
+              <li>
+                <a href="/Trips Reviews">Trips Reviews</a>
+              </li>
+
+              <li>
+                <a href="/Contact">Contact  </a>
+              </li>
+            </ul>
+          </div>
+          <div className="footer-cont">
+            <h4>Sign up for your offers</h4>
+            <hr />
+            By subscribing to our mailing list, you will always get latest news
+            and updates from us. <br /> <br />
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <input type="email" placeholder="Enter your email..." />
+              <MdEmail style={{ marginLeft: "10px", cursor: "pointer" }} />
+            </div>
+          </div>
+        </div>
+        <hr />
+
+      </footer>
+    </>
   );
-};
+}
 
 export default Footer;
