@@ -1,174 +1,273 @@
-
-/* Container for the details section */
-#details {
-    padding: 50px;
-    height: 800px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background-color: aliceblue;
+.about {
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 20px;
+  text-align: center;
 }
 
-/* Images */
-img {
-    width: 600px;
-    height: 600px;
+.banner {
+  width: 100%;
+  height: 60vh;
+  margin-bottom: 5%;
+  background-image: url(../../assets/img/img1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* First section with text */
-#first {
-    width: 30%;
-    padding-right: 50px;
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
 }
 
-/* Text and headings */
-p {
-    font-size: 20px;
+.banner-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  background-color: rgba(65, 65, 65, 0.5); /* Semi-transparent background for text */
+  border-radius: 10px;
 }
 
-#header {
-    font-size: xx-large;
-    font-weight: bolder;
+.banner h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.banner p {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.about-header {
+  background-color: #ffffff;
+  color: rgb(12, 12, 12);
+  padding: 40px;
+}
+
+.statistics {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.stat {
+  flex: 1;
+  margin: 10px;
 }
 
 h1 {
-    text-align: center;
-    font-size: 60px;
-    font-weight: bolder;
-    margin: 50px;
+  font-size: 2.5rem;
 }
 
-#smart {
-    font-weight: bolder;
-    color: blue;
-}
-
-/* Button */
-button {
-    background-color: rgb(86, 86, 234);
-    width: 100px;
-    height: 50px;
-    border-radius: 10px;
-    margin: 2px;
-}
-
-/* Values section */
-#val {
-    display: flex;
-    margin: 200px;
-    height: 300px;
-    padding: 0px;
-}
-
-#word {
-    padding: 20px;
-    width: 50%;
-}
-
-#imgv {
-    width: 40%;
-    height: 100%;
-}
-
-/* Headings */
 h2 {
-    margin-top: 0px;
-    margin-bottom: 1px;
-    color: gold;
-    font-weight: bolder;
-    font-size: 40px;
+  font-size: 1.5rem;
+  margin: 10px 0;
 }
 
-h5 {
-    margin-top: 1px;
-    font-weight: normal;
-    font-size: 30px;
+.description {
+  margin: 20px 0;
 }
 
-/* Faded background span */
-#under{
-    position: absolute;
-    z-index: -1;
-    font-size: 100px;
-    color: rgba(0, 0, 0, 0.05);
-    font-weight: bold;
+.endless-beauty {
+  width: 100%;
+  height: 60vh;
+  background-image: url(../../assets/img/img3.jpg); /* Replace with your image path */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
 }
 
-/* Media Queries for Smaller Screens */
-@media (max-width: 767px) {
-    #details {
-        flex-direction: column;
-        padding: 20px;
-        height: auto; /* Adjust height for better fitting */
-    }
-
-    img {
-        width: 100%; /* Make image responsive */
-        height: auto;
-    }
-
-    #first {
-        width: 100%; /* Full width for smaller screens */
-        padding-right: 0;
-        text-align: center;
-    }
-
-    p {
-        font-size: large; /* Adjust font size for better readability */
-    }
-
-    #header {
-        font-size: large;
-    }
-
-    h1 {
-        font-size: 36px; /* Adjust heading size */
-        margin: 20px;
-    }
-
-    button {
-        width: 100%; /* Full width for buttons */
-        max-width: 200px;
-    }
-
-    #val {
-        flex-direction: column; /* Stack items vertically */
-        margin: 20px 0;
-        height: auto;
-    }
-
-    #word {
-        width: 100%;
-    }
-
-    #imgv {
-        width: 100%;
-        height: 300px;
-    }
-
-    h2 {
-        font-size: 24px; /* Adjust font size for smaller screens */
-    }
-
-    h5 {
-        font-size: 18px;
-    }
+.endless-beauty::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
 }
 
-@media (max-width: 991px) and (min-width: 768px) {
-    #details {
-        flex-direction: column;
-        padding: 30px;
-    }
+.endless-beauty-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  max-width: 600px;
+}
 
-    #first {
-        width: 100%; /* Full width on tablets */
-        padding-right: 0;
-        text-align: center;
-    }
+.endless-beauty h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
 
-    #val {
-        flex-direction: column; /* Stack items vertically on tablets */
-    }
-    
+.endless-beauty p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.discover-button {
+  background-color: transparent;
+   /* Adjust color as needed */
+  color: rgb(83, 83, 83);
+  border: outset;
+width: 30%;
+height:6vh;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+}
+
+.discover-button:hover {
+  background-color: #dafacd; /* Lighter shade for hover effect */
+}
+
+
+.why-village{
+display: flex;
+justify-content: center;
+flex-direction: row;
+align-items: center;
+width: 100%;
+gap: 10%;
+}
+
+.mixedimages {
+  position: relative;
+  width: 40%;
+  height: 80vh; /* Adjust as needed */
+  overflow: hidden;
+}
+
+.main-image {
+  margin-top:30%;
+  width: 100%;
+  height: 50vh;
+  border-radius: 10px; /* Optional: for rounded corners */
+  justify-content: center;
+align-items: center;
+}
+
+.main-image img {
+  width: 90%;
+  height: 100%;
+  border-radius: 10px; /* Optional: for rounded corners */
+  object-fit: cover;
+}
+
+.top-left-image,
+.bottom-right-image {
+  border: 3px white solid;
+  position: absolute;
+  width: 40%; /* Adjust size as needed */
+  height: 30%; /* Adjust size as needed */
+  overflow: hidden;
+  border-radius: 10px; /* Optional: for rounded corners */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Optional: for shadow effect */
+}
+
+.top-left-image {
+  top: 10%;
+  left: -5%;
+}
+
+.bottom-right-image {
+  bottom: -5%;
+  right: -6%;
+}
+
+.top-left-image img,
+.bottom-right-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.WhyUs{
+  width: 40%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: start;
+}
+
+.WhyUs h1{
+  text-align: start;
+  width: 80%;
+}
+
+
+.features {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.feature {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.feature img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+figure{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  gap: 5%;
+  justify-content: center;
+  align-items: center;
+}
+
+figure img {
+  width: 20%;
+  height: 11vh;
+  border-radius: 8px;
+}
+
+figure figcaption{
+  width: 80%;
+  text-align: justify;
+}
+
+
+h3 {
+  margin: 10px 0;
+}
+
+@media (max-width: 600px) {
+  .statistics {
+      flex-direction: column;
+  }
+  
+  .feature {
+      margin: 10px 0;
+  }
 }

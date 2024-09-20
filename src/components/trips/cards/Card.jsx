@@ -46,42 +46,54 @@ const CardList = ({ filters, searchTerm }) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchMapillaryData = async () => {
+    const fetchGooglePlacesData = async () => {
       try {
-        const response = await axios.get('https://graph.mapillary.com/images', {
+        const response = await axios.get('/api/places', {
           params: {
-            fields: 'id,captured_at,compass_angle,geometry,camera_type',
-            bbox: '-180,-90,180,90',
-            limit: 20,
-            access_token: process.env.REACT_APP_MAPILLARY_CLIENT_ID
+            query: 'tourist attractions'
           }
         });
 
-        const mapillaryPlaces = await Promise.all(response.data.data.map(async (item) => {
-          const { data: locationInfo } = await axios.get(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${item.geometry.coordinates[1]}&longitude=${item.geometry.coordinates[0]}&localityLanguage=en`);
+        const googlePlaces = await Promise.all(response.data.results.map(async (place) => {
+          const photoReference = place.photos && place.photos[0].photo_reference;
+          const photoUrl = photoReference
+            ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photoReference}&key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`
+            : 'https://via.placeholder.com/400';
+
+          // Fetch additional details for each place
+          const detailsResponse = await axios.get('/api/place-details', {
+            params: {
+              place_id: place.place_id
+            }
+          });
+
+          const details = detailsResponse.data.result;
 
           return {
-            id: item.id,
-            name: locationInfo.city || locationInfo.locality || 'Unknown Location',
-            country: locationInfo.countryName,
-            location: `${item.geometry.coordinates[1].toFixed(2)}, ${item.geometry.coordinates[0].toFixed(2)}`,
-            rating: (Math.random() * 2 + 3).toFixed(1),
-            image: `https://images.mapillary.com/${item.id}/thumb-2048.jpg`,
-            tourTypes: ['adventure', 'cultural'] // Add default tour types
+            id: place.place_id,
+            name: place.name,
+            country: place.formatted_address.split(',').slice(-1)[0].trim(),
+            location: `${place.geometry.location.lat.toFixed(2)}, ${place.geometry.location.lng.toFixed(2)}`,
+            rating: place.rating,
+            image: photoUrl,
+            tourTypes: ['cultural', 'adventure'], // Default tour types
+            transportation: 'No Public Transit Information',
+            accommodation: details.types.includes('lodging') ? 'Accommodation Available' : 'No Accommodation Information',
+            attractions: details.types.filter(type => ['tourist_attraction', 'point_of_interest', 'landmark'].includes(type)).join(', ')
           };
         }));
 
-        setPlaces(mapillaryPlaces);
+        setPlaces(googlePlaces);
         setLoading(false);
       } catch (error) {
-        console.error('Error fetching Mapillary data:', error);
+        console.error('Error fetching Google Places data:', error);
         setError('Failed to fetch data. Using dummy data instead.');
         setPlaces(getDummyData());
         setLoading(false);
       }
     };
 
-    fetchMapillaryData();
+    fetchGooglePlacesData();
   }, []);
 
   const getDummyData = () => {

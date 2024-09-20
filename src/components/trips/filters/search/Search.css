@@ -1,6 +1,6 @@
 .search-container {
   position: fixed;
-  top: 20px;
+  top: 100px;
 right: 80px; /* Positioned right next to the sidebar toggle button */
   z-index: 1000;
   display: flex;
@@ -8,7 +8,7 @@ right: 80px; /* Positioned right next to the sidebar toggle button */
 }
 
 .search-input {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
   border: none;
   border-radius: 20px;
   padding: 10px 20px;
@@ -23,7 +23,7 @@ right: 80px; /* Positioned right next to the sidebar toggle button */
 }
 
 .search-button {
-  background-color: #1a2a6c;
+  background-color: #000000;
   color: white;
   border: none;
   border-radius: 50%;

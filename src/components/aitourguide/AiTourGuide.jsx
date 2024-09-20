@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import './AiTourGuide.css';
+import { FaRobot, FaTimes } from 'react-icons/fa';
 
 const AiTourGuide = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,13 +47,13 @@ const AiTourGuide = () => {
         <div className="greeting-bubble">Hi, how can I help you?</div>
       )}
       <button className="toggle-button" onClick={toggleChatbox}>
-        <img src="/path/to/ai-icon.png" alt="AI Tour Guide" />
+        <FaRobot />
       </button>
       {isOpen && (
         <div className="chatbox-modal">
           <div className="chatbox-header">
             <h3>AI Tour Guide</h3>
-            <button onClick={toggleChatbox}>Close</button>
+            <button onClick={toggleChatbox}><FaTimes /></button>
           </div>
           <div className="chatbox-messages">
             {messages.map((message, index) => (

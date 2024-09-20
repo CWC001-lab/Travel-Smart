@@ -2,7 +2,6 @@ import React, { useState, useCallback } from 'react';
 import Sidebar from '../filters/sidebar/SideBar';
 import CardList from '../cards/Card';
 import Search from '../filters/search/Search';
-import AiTourGuide from '../../aitourguide/AiTourGuide';
 import './TripsCatalog.css';
 
 const TripsCatalog = () => {
@@ -32,7 +31,6 @@ const TripsCatalog = () => {
       <Search onSearch={handleSearch} />
       <div className="main-content">
         <CardList filters={filters} searchTerm={searchTerm} />
-        <AiTourGuide />
       </div>
     </div>
   );

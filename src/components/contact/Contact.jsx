@@ -1,11 +1,38 @@
-import React, { useState } from 'react';
-import './Contact.css';
-
+import React, { useRef, useState } from "react";
+import "./Contact.css";
+import emailjs from "@emailjs/browser";
+// import { Form } from "react-bootstrap";
+// npm i @emailjs/browser
 const Contact = () => {
   const [mapVisible, setMapVisible] = useState(false);
 
   const toggleMap = () => {
-    setMapVisible(!mapVisible);
+    setMapVisible(prevState => !prevState);
+  };
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_qnqwyip",
+        "template_p3cd1lj",
+        form.current,
+        "sQ8QrD1aZiphsj0Ry" // Use your actual public key here
+      )
+      .then(
+        (result) => {
+          console.log("Email sent successfully:", result.text);
+          alert("Message sent successfully!");
+          form.current.reset(); // Reset the form after successful submission
+        },
+        (error) => {
+          console.error("Failed to send email:", error.text);
+          alert("Failed to send message. Please try again.");
+        }
+      );
   };
 
   return (
@@ -20,18 +47,22 @@ const Contact = () => {
         <div className="contact-container">
           <div className="contact-info">
             <div className="info-item">
-              <strong>Email:</strong>
-              <a href="mailto:kelvinkokorie@gmail.com">kelvinkokorie@gmail.com</a>
+              <strong>Location: </strong>
+              <a href="mailto:kelvinkokorie@gmail.com">
+ 89 Modupe Johnson Street, Ibadan, Nigeria
+              </a>
             </div>
             <div className="info-item">
               <strong>Phone:</strong>
               <a href="tel:+2349036728132">+234-903-672-8132</a>
             </div>
             <div className="map-container">
-              <p><strong>Our Location:</strong></p>
-              <div id="map" className={mapVisible ? 'show' : 'hidden'}>
+              <p>
+                <strong>Our Location:</strong>
+              </p>
+              <div id="map" className={mapVisible ? "show" : "hidden"}>
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.60872098296!2d3.8856896750010543!3d7.397663792612251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10398d6a657b14c9%3A0xb43849f101727e38!2sAptech%20Ibadan!5e0!3m2!1sen!2sng!4v1726673096808!5m2!1sen!2sng"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.60872098296!2d3.8856896750010543!3d7.397663792612251!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x10398d6a657b14c9%3A0xb43849f101727e38!2sAptech%20Ibadan!5e0!3m2!1sen!2sng!4v1726747774576!5m2!1sen!2sng"
                   width="600"
                   height="450"
                   style={{ border: 0 }}
@@ -47,15 +78,25 @@ const Contact = () => {
 
           <div className="contact-form">
             <h3>Send Us a Message</h3>
-            <form action="/submit-form" method="POST">
+            <form
+              action="/submit-form"
+              method="POST"
+              ref={form}
+              onSubmit={sendEmail}
+            >
               <label htmlFor="name">Full Name:</label>
-              <input type="text" id="name" name="name" required />
+              <input type="text" id="name" name="to_name" required />
 
               <label htmlFor="email">Email Address:</label>
-              <input type="email" id="email" name="email" required />
+              <input type="email" id="email" name="from_name" required />
 
               <label htmlFor="message">Message:</label>
-              <textarea id="message" name="message" rows="4" required></textarea>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                required
+              ></textarea>
 
               <button type="submit">Send Message</button>
             </form>

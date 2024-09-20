@@ -1,7 +1,7 @@
 .trips-catalog {
   display: flex;
   height: 100vh;
-  background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+  background: linear-gradient(135deg, #ffffff, #f4f4f4, #f7f6f5);
   transition: margin-left 0.3s ease-in-out;
 }
 

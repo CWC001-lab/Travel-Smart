@@ -6,7 +6,8 @@ import TripsCatalog from './components/trips/trips_catalog/TripsCatalog';
 import { NavBar } from './components/navbar/Navbar';
 import About from './components/about/About';
 import Contact from './components/contact/Contact';
-
+// import Footer from './components/footer/Footer';
+import AiTourGuide from './components/aitourguide/AiTourGuide';
 function App() {
   return (
     <Router>
@@ -19,6 +20,8 @@ function App() {
           <Route path="/contact-us" element={<Contact />} />
           {/* Add other routes here */}
         </Routes>
+<AiTourGuide/>
+        {/* <Footer /> */}
       </div>
     </Router>
   );

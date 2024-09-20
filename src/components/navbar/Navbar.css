@@ -31,7 +31,7 @@
     font-weight: 400;
     overflow-x: hidden;
     position: relative;
-    background-color: #121212 !important; /* Light background to match your current theme */
+    background-color: #ffffff !important; /* Light background to match your current theme */
     color: #333 !important; /* Darker text color for better contrast */
     font-family: "Centra", sans-serif !important;
   }

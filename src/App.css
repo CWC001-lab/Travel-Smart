@@ -3,6 +3,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: rgb(255, 255, 255) !important;
 }
 
 .main-content {
@@ -15,9 +16,12 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: white !important;
   font-family: 'Arial', sans-serif;
 }
-
+body{
+background-color: white !important;
+}
 #root {
   height: 100%;
 }

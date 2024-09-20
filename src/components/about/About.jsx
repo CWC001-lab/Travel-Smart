@@ -1,69 +1,118 @@
-import React, { useState } from 'react';
-import './About.css';
+import React from 'react';
+import img1 from "../../assets/img/img1.jpg";
+import Asia from "../../assets/img/Asia.jpg";
+import img3 from "../../assets/img/img3.jpg";
+import './About.css'; // Import the CSS file for styling
 
 const About = () => {
-  const [showMore, setShowMore] = useState(false);
+    return (
+        <div className="about">
 
-  const toggleMore = () => {
-    setShowMore(!showMore);
-  };
+<header className='banner'>
+  <div className='banner-content'>
+    <h1>About Us</h1>
+    <p>Discover our story and passion for travel</p>
+  </div>
+</header>
 
-  return (
-    <div className="about-container">
-      <h1>ABOUT US</h1>
-      <div id="details">
-        <div id="first">
-          <p id="header">AT <b id="smart">TRAVELSMART</b> WE ARE PASSIONATE ABOUT TURNING YOUR TRAVEL DREAMS INTO REALITY</p>
-          <p>
-            Founded by adventure enthusiasts, we explore the world to bring you the best travel tips, destinations, and experiences.
-            {showMore && (
-              <span id="span">
-                Whether you're seeking a peaceful retreat, thrilling adventure, or cultural immersion, we craft personalized itineraries tailored to your needs. Our mission is to inspire, guide, and support every step of your journey.
-                Ready to explore? Let's make your next adventure unforgettable!
-              </span>
-            )}
-          </p>
-          <button onClick={toggleMore}>{showMore ? 'Show less' : 'Show more'}</button>
-        </div>
-        <div id="image">
-          <img src="/images/open-book-world-travel.png" alt="World Travel" id="imgs2" />
-        </div>
-      </div>
 
-      <div id="values">
-        <h1>VALUES</h1>
-        <div id="val">
-          <div id="word">
-            <h2>Budget-Friendly Tips</h2>
-            <span id="under">VALUES</span>
-            <h5>Budget-Friendly Tips</h5>
-            <p>Offers smart travel tips and budget-friendly hacks, such as finding cheap flights, accommodation deals, and money-saving strategies during the trip.</p>
-          </div>
-          <img src="/images/img2.jpg" alt="Budget-Friendly Tips" id="imgv" />
-        </div>
 
-        <div id="val">
-          <img src="/images/img1.jpg" alt="User-Centric Information" id="imgv" />
-          <div id="word">
-            <h2>User-Centric Information</h2>
-            <span id="under">VALUES</span>
-            <h5>User-Centric Information</h5>
-            <p>Provides detailed and up-to-date information on travel destinations, including attractions, accommodation options, transportation, and local customs to help travelers make informed decisions.</p>
-          </div>
-        </div>
 
-        <div id="val">
-          <div id="word">
-            <h2>Cultural Sensitivity</h2>
-            <span id="under">VALUES</span>
-            <h5>Cultural Sensitivity</h5>
-            <p>Educates travelers on respecting local cultures and traditions, fostering positive interactions with local communities and promoting ethical travel.</p>
-          </div>
-          <img src="/images/kalen-emsley-7bwQXzbF6KE-unsplash.jpg" alt="Cultural Sensitivity" id="imgv" />
+
+
+            <main className="about-header">
+
+              <div className='Rates'>
+
+              </div>
+                <h1>A Paradise Village</h1>
+                <div className="statistics">
+                    <div className="stat">
+                        <h3>10,000+</h3>
+                        <p>Visitors</p>
+                    </div>
+                    <div className="stat">
+                        <h3>94%</h3>
+                        <p>Satisfaction Rate</p>
+                    </div>
+                    <div className="stat">
+                        <h3>Top 100</h3>
+                        <p>Destinations</p>
+                    </div>
+                    <div className="stat">
+                        <h3>7+</h3>
+                        <p>Awards</p>
+                    </div>
+                </div>
+                <p className="description">
+                    Authentic Culture and Charm, Where Beauty Knows No Bounds
+                </p>
+            </main>
+
+            <section className="endless-beauty">
+                <div className="endless-beauty-content">
+                    <h2>Endless Beauty, Natural Charm</h2>
+                    <p>
+                        Experience breathtaking landscapes and immerse yourself in the local culture.
+                    </p>
+                    <button className="discover-button">Discover More</button>
+                </div>
+            </section>
+
+            <section className="why-village">
+
+
+<div className='mixedimages'>
+  <div className='main-image'>
+    <img src={img1} alt="Main scenery" />
+  </div>
+  <div className='top-left-image'>
+    <img src={Asia} alt="Top left scenery" />
+  </div>
+  <div className='bottom-right-image'>
+    <img src={img3} alt="Bottom right scenery" />
+  </div>
+</div>
+<div className='WhyUs'>
+
+<h1>Perfect Destination for Peaceful Vacation</h1>
+                <div className="features">
+
+
+                      <figure>
+                        <img src={img1} alt="Serenity" />
+<figcaption>
+
+                        <h3>Serenity</h3>
+                        <p>Find peace in our tranquil surroundings. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+</figcaption>
+                      </figure>
+
+
+                      <figure>
+                        <img src={img1} alt="Serenity" />
+<figcaption>
+
+                        <h3>Serenity</h3>
+                        <p>Find peace in our tranquil surroundings. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+</figcaption>
+                      </figure>
+
+
+                      <figure>
+                        <img src={img1} alt="Serenity" />
+<figcaption>
+
+                        <h3>Serenity</h3>
+                        <p>Find peace in our tranquil surroundings. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+</figcaption>
+                      </figure>
+                      
+                    </div>
+</div>
+            </section>
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default About;
