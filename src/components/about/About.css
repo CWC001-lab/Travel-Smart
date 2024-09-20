@@ -9,7 +9,8 @@
   width: 100%;
   height: 60vh;
   margin-bottom: 5%;
-  background-image: url(../../assets/img/img1.jpg);
+  background-image: url(../../assets/img/aboutuspagebanner.jpg);
+  background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -287,7 +288,8 @@ align-items: center;
 .endless-beauty {
   width: 100%;
   height: 60vh;
-  background-image: url(../../assets/img/img3.jpg); /* Replace with your image path */
+  background-image: url(../../assets/img/foot.jpg); /* Replace with your image path */
+  background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

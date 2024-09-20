@@ -316,7 +316,7 @@ export const TourReviews = () => {
 
   return (
     <section className="tour-reviews" id="tour-reviews">
-              <div className="hero">
+              <div className="tour">
         <h2>Check out our reviews</h2>
       </div>
       <Container>

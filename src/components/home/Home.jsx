@@ -2,7 +2,19 @@ import React, { useCallback, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Home.css";
 import img1 from "../../assets/img/img1.jpg";
-import Asia from "../../assets/img/Asia.jpg";
+import aboutimagecard1 from "../../assets/img/aboutimagecard1.jpg";
+import homepagecard1 from "../../assets/img/homepagecard1.jpg";
+import homepagecard2 from "../../assets/img/homepagecard2.jpg";
+import homepagecard3 from "../../assets/img/homepagecard3.jpg";
+import homeimage from "../../assets/img/homeimage.jpg";
+import sunset from "../../assets/img/sunset.jpg";
+import waterfall1 from "../../assets/img/waterfall1.jpg";
+import caves from "../../assets/img/caves.jpg";
+import cycling from "../../assets/img/cycling.jpg";
+import homepagebanner2 from "../../assets/img/homepagebanner2.jpg";
+import card3hompage from "../../assets/img/card3homepage.jpg";
+import rockystream from "../../assets/img/rockystream.jpg";
+
 import { FaFacebook, FaTwitter, FaAccessibleIcon } from "react-icons/fa";
 import ContinentModal from './ContinentModal';
 import TourCard from './TourCard';
@@ -41,9 +53,10 @@ const Home = () => {
 
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
-    { image: img1, location: 'Bahamas', description: 'stylish', title: 'Little nice beach' },
-    { image: img1, location: 'Maldives', description: 'luxurious', title: 'Crystal clear waters' },
-    { image: img1, location: 'Bali', description: 'exotic', title: 'Tropical paradise' },
+    { image: rockystream, location: 'United States', description: 'Natural', title: 'Little stream' },
+    { image: sunset, location: 'Maldives', description: 'luxurious', title: 'Crystal clear waters' },
+    { image: waterfall1, location: 'Bali', description: 'exotic', title: 'Tropical paradise' },
+    { image: homeimage, location: 'China', description: 'Natural', title: 'A paradise from home' },
     // Add more slides as needed
   ];
 
@@ -82,10 +95,10 @@ const Home = () => {
   };
 
   const tours = [
-    { id: 1, title: "Tour 1", description: "Experience the beauty of Tour 1", image: img1 },
-    { id: 2, title: "Tour 2", description: "Discover the wonders of Tour 2", image: img1 },
-    { id: 3, title: "Tour 3", description: "Explore the mysteries of Tour 3", image: img1 },
-    { id: 4, title: "Tour 4", description: "Adventure awaits in Tour 4", image: img1 },
+    { id: 1, title: "Tour 1", description: "Experience the beauty of Tour 1", image: homepagebanner2 },
+    { id: 2, title: "Tour 2", description: "Discover the wonders of Tour 2", image: cycling },
+    { id: 3, title: "Tour 3", description: "Explore the mysteries of Tour 3", image: caves },
+    { id: 4, title: "Tour 4", description: "Adventure awaits in Tour 4", image: card3hompage },
   ];
 
   const handleContinentHover = (continent) => {
@@ -174,11 +187,11 @@ const Home = () => {
             </AnimatePresence>
           </div>
           <motion.div className="image-wrapper2" variants={itemVariants}>
-            <img src={Asia} alt="Second destination" className="half-image" />
+            <img src={img1} alt="Second destination" className="half-image" />
             <div className="image-text">
-              <motion.p variants={itemVariants}>Bahamas</motion.p>
-              <motion.p variants={itemVariants}>stylish</motion.p>
-              <motion.h1 variants={itemVariants}>Mountain</motion.h1>
+              <motion.p variants={itemVariants}></motion.p>
+              <motion.p variants={itemVariants}></motion.p>
+              <motion.h1 variants={itemVariants}></motion.h1>
             </div>
           </motion.div>
         </motion.div>
@@ -246,17 +259,17 @@ const Home = () => {
       <div className="device-container">
         <div className="device-item device-item-small">
           <div className="device-screen">
-            <img src={Asia} alt="Device 1" />
+            <img src={homepagecard1} alt="Device 1" />
           </div>
         </div>
         <div className="device-item device-item-medium">
           <div className="device-screen">
-            <img src={Asia} alt="Device 2" />
+            <img src={homepagecard2} alt="Device 2" />
           </div>
         </div>
         <div className="device-item device-item-large">
           <div className="device-screen">
-            <img src={Asia} alt="Device 3" />
+            <img src={homepagecard3} alt="Device 3" />
           </div>
         </div>
       </div>
@@ -273,7 +286,7 @@ const Home = () => {
 
       <section className="AboutContainer">
 <div className="AboutImage">
-<img src={img1} alt="about" />
+<img src={aboutimagecard1} alt="about" />
 </div>
 
 <div className="AboutText">

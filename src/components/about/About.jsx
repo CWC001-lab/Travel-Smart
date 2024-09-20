@@ -1,6 +1,13 @@
 import React from 'react';
-import img1 from "../../assets/img/img1.jpg";
-import Asia from "../../assets/img/Asia.jpg";
+import aboutuspage2 from "../../assets/img/aboutuspage2.jpg";
+import aboutpagecard3 from "../../assets/img/aboutpagecard3.jpg";
+import aboutusimage from "../../assets/img/aboutusimage.jpg";
+import aboutpagecard2 from "../../assets/img/aboutpagecard2.jpg";
+import mountain from "../../assets/img/mountain.jpg";
+import rock from "../../assets/img/rock.jpg";
+import grass from "../../assets/img/grass.jpg";
+
+
 import img3 from "../../assets/img/img3.jpg";
 import './About.css'; // Import the CSS file for styling
 
@@ -54,17 +61,17 @@ const About = () => {
 
               <div className='CombinedImages'>
   <div className='First-main-image'>
-    <img src={img1} alt="Main scenery" />
+    <img src={aboutuspage2} alt="Main scenery" />
   </div>
   <div className='First-top-left-image'>
-    <img src={Asia} alt="Top left scenery" />
+    <img src={aboutpagecard3} alt="Top left scenery" />
   </div>
   <div className='First-bottom-left-image'>
-    <img src={img3} alt="Bottom right scenery" />
+    <img src={aboutpagecard2} alt="Bottom right scenery" />
   </div>
 
   <div className='First-middle-right-image'>
-    <img src={img3} alt="Bottom right scenery" />
+    <img src={aboutusimage} alt="Bottom right scenery" />
   </div>
 
 </div>
@@ -108,13 +115,13 @@ const About = () => {
 
 <div className='mixedimages'>
   <div className='main-image'>
-    <img src={img1} alt="Main scenery" />
+    <img src={mountain} alt="Main scenery" />
   </div>
   <div className='top-left-image'>
-    <img src={Asia} alt="Top left scenery" />
+    <img src={grass} alt="Top left scenery" />
   </div>
   <div className='bottom-right-image'>
-    <img src={img3} alt="Bottom right scenery" />
+    <img src={rock} alt="Bottom right scenery" />
   </div>
 </div>
 
@@ -126,7 +133,7 @@ const About = () => {
 
 
                       <figure>
-                        <img src={img1} alt="Serenity" />
+                        <img src={img3} alt="Serenity" />
 <figcaption>
 
                         <h3>Serenity</h3>
@@ -136,7 +143,7 @@ const About = () => {
 
 
                       <figure>
-                        <img src={img1} alt="Serenity" />
+                        <img src={img3} alt="Serenity" />
 <figcaption>
 
                         <h3>Serenity</h3>
@@ -146,7 +153,7 @@ const About = () => {
 
 
                       <figure>
-                        <img src={img1} alt="Serenity" />
+                        <img src={img3} alt="Serenity" />
 <figcaption>
 
                         <h3>Serenity</h3>
