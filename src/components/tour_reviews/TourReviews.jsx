@@ -222,9 +222,11 @@ export const TourReviews = () => {
 
   return (
     <section className="tour-reviews" id="tour-reviews">
-              <div className="tour">
-        <h2>Check out our reviews</h2>
-      </div>
+<header className='tourbanner'>
+  <div className='tourbanner-content'>
+    <h1>Check out our views</h1>
+  </div>
+</header>
       <Container>
         <Row>
           <Col>

@@ -32,7 +32,7 @@
     overflow-x: hidden;
     position: relative;
     background-color: #ffffff !important; /* Light background to match your current theme */
-    color: #333 !important; /* Darker text color for better contrast */
+    color: #06141b !important; /* Darker text color for better contrast */
     font-family: "Centra", sans-serif !important;
   }
   
@@ -125,7 +125,7 @@
   .navbar-brand {
     font-weight: 700;
     font-size: 1.5rem;
-    color: #333;
+    color: #06141b;
     text-decoration: none;
   }
   
@@ -140,7 +140,7 @@
     display: block;
     width: 25px;
     height: 3px;
-    background-color: #333;
+    background-color: #06141b;
     position: relative;
   }
   
@@ -150,7 +150,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: #333;
+    background-color: #06141b;
     transition: all 0.3s ease;
   }
   
@@ -167,14 +167,14 @@
   }
   
   .navbar-item {
-    color: #333;
+    color: #06141b;
     text-decoration: none;
     padding: 0.5rem 1rem;
     transition: color 0.3s ease;
   }
   
   .navbar-item:hover {
-    color: #007bff;
+    color: #9ba8ab;
   }
   
   @media (max-width: 768px) {
@@ -224,7 +224,7 @@
   position: relative;
   padding: 10px 15px;
   text-decoration: none;
-  color: #333;
+  color: #06141b;
   transition: color 0.3s ease;
 }
 
@@ -241,15 +241,15 @@
 .navbar-item::before {
   top: 0;
   left: 0;
-  border-top-color: #333;
-  border-left-color: #333;
+  border-top-color: #06141b;
+  border-left-color: #06141b;
 }
 
 .navbar-item::after {
   bottom: 0;
   right: 0;
-  border-bottom-color: #333;
-  border-right-color: #333;
+  border-bottom-color: #06141b;
+  border-right-color: #06141b;
 }
 
 .navbar-item:hover::before,
@@ -262,14 +262,14 @@
 
 .navbar-item:hover,
 .navbar-item.active {
-  color: #007bff;
+  color: #9ba8ab;
 }
 
 .navbar-item:hover::before,
 .navbar-item:hover::after,
 .navbar-item.active::before,
 .navbar-item.active::after {
-  border-color: #007bff;
+  border-color: #9ba8ab;
 }
 
 @media (max-width: 1024px) {

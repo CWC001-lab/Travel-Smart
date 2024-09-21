@@ -20,6 +20,7 @@ body{
   background: url('../../assets/img/card1.jpg') no-repeat center center/cover;
   background-attachment: fixed;
   background-blend-mode: darken;
+  background-color: rgba(13%, 26.3%, 29.4%, 60%);
   height: 100vh;
 }
 
@@ -65,6 +66,10 @@ body{
   width: 150px;
   height: 50px;
   border: outset;
+}
+
+.book-tour:hover{
+  background-color: #9ba8ab;
 }
 
 
@@ -139,6 +144,64 @@ body{
   fill: #FFFFFF;
 }
 
+@media screen and (min-width: 600px) {
+  .header {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: start;
+  }
+
+  .text-content {
+      width: 50%;
+
+
+  }
+
+ .outline-text {
+      font-size: 2.5rem;
+
+  }
+
+  .text-content h1 {
+      font-size: 4rem;
+  }
+
+  .text-content p {
+      width: 80%;
+      display: none;
+  }
+
+  .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 1;
+      width: 40%;
+  }
+
+  .large-image {
+      width: 25vw;
+      height: 30vh;
+  }
+
+  .half-image {
+      width: 16vw;
+      height: 20vh;
+      margin-left: -25px;
+  }
+
+  .custom-shape-divider-bottom svg {
+      height: 80px;
+  }
+}
+
+
+
+
 @media screen and (min-width: 768px) {
   .header {
       flex-direction: row;
@@ -148,10 +211,13 @@ body{
 
   .text-content {
       width: 50%;
+
+
   }
 
-  .outline-text {
+ .outline-text {
       font-size: 2.5rem;
+
   }
 
   .text-content h1 {
@@ -160,6 +226,7 @@ body{
 
   .text-content p {
       width: 80%;
+      display: none;
   }
 
   .image-container {
@@ -438,7 +505,6 @@ margin-bottom: 3%;
 
 .AboutImage img{
     height: inherit;
-    border: 3px solid black;
     border-radius: 20px;
 }
 
@@ -527,7 +593,7 @@ margin-bottom: 3%;
 }
 
 .continent-item.hovered {
-  color: #007bff;
+  color: #9ba8ab;
 }
 
 @keyframes scroll {
@@ -554,6 +620,10 @@ margin-bottom: 3%;
 
 .modal-content {
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 2rem;
   border-radius: 10px;
   max-width: 500px;
@@ -564,7 +634,7 @@ margin-bottom: 3%;
   display: inline-block;
   margin-top: 1rem;
   padding: 0.5rem 1rem;
-  background-color: #007bff;
+  background-color: #9ba8ab;
   color: white;
   text-decoration: none;
   border-radius: 5px;
@@ -575,9 +645,19 @@ margin-bottom: 3%;
   padding: 0.5rem 1rem;
   background-color: #141414;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 30%;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+
+.close-button:hover{
+  background-color: #9ba8ab;
 }
 
 .social-icons svg {
@@ -588,7 +668,7 @@ margin-bottom: 3%;
 .Tours {
   padding: 40px 0;
   height: 60vh;
-  margin-bottom: 10%;
+  margin-bottom: 20%;
   width: 100%;
 }
 
@@ -657,7 +737,7 @@ margin-bottom: 3%;
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(45deg, rgba(0, 100, 255, 0.5), rgba(0, 255, 100, 0.5));
+  background: rgba(13%, 26.3%, 29.4%, 60%);
   transition: all 0.3s ease;
   z-index: 1;
 }
@@ -710,12 +790,12 @@ margin-bottom: 3%;
 
 
 .newsletter-bx {
-    background: #696969;
+    background: #ccd0cf;
     border-radius: 55px;
     color: #121212;
     padding: 85px 125px;
-    margin-bottom: 80px;
-    /* margin-top: 122px; */
+
+    margin-top: 122px;
     width: 100%;
   }
   .newsletter-bx h3 {
@@ -736,7 +816,7 @@ margin-bottom: 3%;
   }
   .new-email-bx::before {
     content: "";
-    background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
+    background: rgba(13%, 26.3%, 29.4%, 60%);
     border-radius: 20px;
     position: absolute;
     z-index: -1;
@@ -765,7 +845,7 @@ margin-bottom: 3%;
     padding: 0 15px;
   }
   .new-email-bx button {
-    background: linear-gradient(90.21deg, #aa367c -5.91%, #4a2fbd 111.58%);
+    background: #06141b;
     padding: 20px 10px;
     width: 30%;
     color: #fff;

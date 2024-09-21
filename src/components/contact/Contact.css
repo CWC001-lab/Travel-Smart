@@ -7,7 +7,7 @@
 body {
   font-family: "Roboto", sans-serif;
   background-color: #f4f4f4;
-  color: #333;
+  color: #06141b;
 }
 
 nav ul {
@@ -15,7 +15,7 @@ nav ul {
   padding: 0;
   display: flex;
   justify-content: center;
-  background-color: #333;
+  background-color: #06141b;
 }
 
 nav ul li {
@@ -122,7 +122,7 @@ background-attachment: fixed;
 
 .contact-info .info-item {
   font-size: 1.1rem;
-  color: #333;
+  color: #06141b;
   background-color: #e8f0f2;
   padding: 15px;
   border-radius: 10px;
@@ -156,12 +156,13 @@ background-attachment: fixed;
   display: flex;
   flex-direction: column;
   gap: 20px;
+  height: 50vh;
 }
 
 .contact-form label {
   display: block;
   font-size: 1rem;
-  color: #555;
+  color: #4A56CA;
   margin-bottom: 5px;
 }
 
@@ -179,9 +180,9 @@ background-attachment: fixed;
 }
 
 .contact-form button {
-  width: 100%;
+  width: 50%;
   padding: 12px;
-  background-color: #333;
+  background-color: #06141b;
   color: white;
   border: none;
   cursor: pointer;
@@ -191,7 +192,7 @@ background-attachment: fixed;
 }
 
 .contact-form button:hover {
-  background-color: #555;
+  background-color: #4A5C6A;
   transform: scale(1.05);
 }
 
@@ -227,9 +228,9 @@ background-attachment: fixed;
 }
 
 .map-container button {
-  width: 100%;
+  width: 50%;
   padding: 12px;
-  background-color: #333;
+  background-color: #06141b;
   color: white;
   border: none;
   cursor: pointer;
@@ -239,7 +240,7 @@ background-attachment: fixed;
 }
 
 .map-container button:hover {
-  background-color: #555;
+  background-color: #4A56CA;
   transform: scale(1.05);
 }
 

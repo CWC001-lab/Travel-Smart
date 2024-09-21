@@ -25,8 +25,8 @@ Taking you on a Tour Around
             Lorem ipsum dolor sit amet consectetur adipisi jjuhihijin. <br />{" "}
             <br />
             <p>Contact:</p>
-            Phone : +012 345 6789 0123 <br />
-            Email : info@example.com
+            Phone : +234 780067172 <br />
+            Email : davidchinedu310@gmail.com
           </div>
           <div className="footer-cont">
             <h4>Quick Links</h4>

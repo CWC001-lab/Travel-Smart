@@ -11,6 +11,9 @@
   margin-bottom: 5%;
   background-image: url(../../assets/img/aboutuspagebanner.jpg);
   background-attachment: fixed;
+  background-blend-mode: darken;
+  /* background-color: rgba(13%, 26.3%, 29.4%, 60%); */
+  background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
