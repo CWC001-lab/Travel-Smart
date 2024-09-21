@@ -6,7 +6,9 @@ import aboutpagecard2 from "../../assets/img/aboutpagecard2.jpg";
 import mountain from "../../assets/img/mountain.jpg";
 import rock from "../../assets/img/rock.jpg";
 import grass from "../../assets/img/grass.jpg";
-
+import icon1 from "../../assets/img/icon1.jpg";
+import icon2 from "../../assets/img/icon2.jpg";
+import icon3 from "../../assets/img/icon3.jpg";
 
 import img3 from "../../assets/img/img3.jpg";
 import './About.css'; // Import the CSS file for styling
@@ -133,7 +135,7 @@ const About = () => {
 
 
                       <figure>
-                        <img src={img3} alt="Serenity" />
+                        <img src={icon1} alt="Serenity" />
 <figcaption>
 
                         <h3>Serenity</h3>
@@ -143,7 +145,7 @@ const About = () => {
 
 
                       <figure>
-                        <img src={img3} alt="Serenity" />
+                        <img src={icon2} alt="Serenity" />
 <figcaption>
 
                         <h3>Serenity</h3>
@@ -153,7 +155,7 @@ const About = () => {
 
 
                       <figure>
-                        <img src={img3} alt="Serenity" />
+                        <img src={icon3} alt="Serenity" />
 <figcaption>
 
                         <h3>Serenity</h3>

@@ -3,39 +3,35 @@ import { motion } from 'framer-motion';
 import { FaFilter, FaTimes } from 'react-icons/fa';
 import './SideBar.css';
 
-const countries = [
-  { code: '', name: 'All Countries', flag: '🌎' },
-  { code: 'US', name: 'United States', flag: '🇺🇸' },
-  { code: 'GB', name: 'United Kingdom', flag: '🇬🇧' },
-  { code: 'FR', name: 'France', flag: '🇫🇷' },
-  { code: 'DE', name: 'Germany', flag: '🇩🇪' },
-  { code: 'JP', name: 'Japan', flag: '🇯🇵' },
-  { code: 'AU', name: 'Australia', flag: '🇦🇺' },
-  { code: 'CA', name: 'Canada', flag: '🇨🇦' },
-  { code: 'IT', name: 'Italy', flag: '🇮🇹' },
-  { code: 'ES', name: 'Spain', flag: '🇪🇸' },
-  { code: 'BR', name: 'Brazil', flag: '🇧🇷' },
+const continents = [
+  { code: '', name: 'All Continents' },
+  { code: 'Africa', name: 'Africa' },
+  { code: 'Asia', name: 'Asia' },
+  { code: 'Europe', name: 'Europe' },
+  { code: 'North America', name: 'North America' },
+  { code: 'South America', name: 'South America' },
+  { code: 'Oceania', name: 'Oceania' },
 ];
 
 const tourTypes = [
-  { id: 'family', label: 'Family Tours' },
-  { id: 'adventure', label: 'Adventure Tours' },
-  { id: 'luxury', label: 'Luxury Tours' },
-  { id: 'cultural', label: 'Cultural Tours' },
+  'cultural', 'adventure', 'luxury', 'eco-friendly', 'historical', 'culinary',
+  'wildlife', 'beach', 'urban exploration', 'spiritual', 'photography',
+  'volunteer', 'educational', 'romantic', 'family-friendly', 'solo travel',
+  'backpacking', 'art and museum', 'festival', 'sports and recreation'
 ];
 
 const Sidebar = ({ onFilterChange, isOpen, toggleSidebar }) => {
   const [rating, setRating] = useState(0);
-  const [country, setCountry] = useState('');
+  const [continent, setContinent] = useState('');
   const [selectedTourTypes, setSelectedTourTypes] = useState([]);
 
   useEffect(() => {
-    onFilterChange({ rating, country, tourTypes: selectedTourTypes });
-  }, [rating, country, selectedTourTypes, onFilterChange]);
+    onFilterChange({ rating, continent, tourTypes: selectedTourTypes });
+  }, [rating, continent, selectedTourTypes, onFilterChange]);
 
-  const handleTourTypeChange = (id) => {
+  const handleTourTypeChange = (type) => {
     setSelectedTourTypes(prev => 
-      prev.includes(id) ? prev.filter(type => type !== id) : [...prev, id]
+      prev.includes(type) ? prev.filter(t => t !== type) : [...prev, type]
     );
   };
 
@@ -57,17 +53,15 @@ const Sidebar = ({ onFilterChange, isOpen, toggleSidebar }) => {
       >
         <div className="sidebar-content">
           <h2 className="sidebar-title">Explore Destinations</h2>
-          <div className="filter-group country-select">
-            <label htmlFor="country">Select Country</label>
+          <div className="filter-group continent-select">
+            <label htmlFor="continent">Select Continent</label>
             <select
-              id="country"
-              value={country}
-              onChange={(e) => setCountry(e.target.value)}
+              id="continent"
+              value={continent}
+              onChange={(e) => setContinent(e.target.value)}
             >
-              {countries.map((c) => (
-                <option key={c.code} value={c.code}>
-                  {c.flag} {c.name}
-                </option>
+              {continents.map((c) => (
+                <option key={c.code} value={c.code}>{c.name}</option>
               ))}
             </select>
           </div>
@@ -88,17 +82,17 @@ const Sidebar = ({ onFilterChange, isOpen, toggleSidebar }) => {
               <span>5</span>
             </div>
           </div>
-          <div className="filter-group recommendations">
-            <h3>Recommendations</h3>
+          <div className="filter-group tour-types">
+            <h3>Tour Types</h3>
             {tourTypes.map(type => (
-              <div key={type.id} className="checkbox-container">
+              <div key={type} className="checkbox-container">
                 <input
                   type="checkbox"
-                  id={type.id}
-                  checked={selectedTourTypes.includes(type.id)}
-                  onChange={() => handleTourTypeChange(type.id)}
+                  id={type}
+                  checked={selectedTourTypes.includes(type)}
+                  onChange={() => handleTourTypeChange(type)}
                 />
-                <label htmlFor={type.id}>{type.label}</label>
+                <label htmlFor={type}>{type}</label>
               </div>
             ))}
           </div>

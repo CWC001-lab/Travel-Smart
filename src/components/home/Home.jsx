@@ -323,7 +323,12 @@ const Home = () => {
       </AnimatePresence>
 
       <section className="Tours">
+        <div className="TourText">
+
         <h2>Our Tours</h2>
+        <p>Discover hidden gems, unwind in serene landscapes, and connect with diverse traditions on an 
+          enchanting tour of a lifetime </p>
+        </div>
         <div className="tour-grid">
           {tours.map((tour) => (
             <TourCard key={tour.id} tour={tour} />

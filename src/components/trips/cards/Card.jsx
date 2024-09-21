@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import axios from 'axios';
+import { FaBookmark, FaInfoCircle, FaShare } from 'react-icons/fa';
 import './Card.css';
 
 const Card = ({ place, index, onPlaceSelect }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <motion.div
       className="card"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.2 }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       <img src={place.image} alt={place.name} className="card-image" />
       <div className="card-content">
@@ -19,13 +24,37 @@ const Card = ({ place, index, onPlaceSelect }) => {
         <p className="card-description">{place.description}</p>
         <p className="card-accommodation">{place.accommodation}</p>
         <p className="card-transportation">{place.transportation}</p>
-        <button
-          className="card-details-button"
-          onClick={() => onPlaceSelect(place)}
-        >
-          View Details
-        </button>
       </div>
+      <motion.div 
+        className="card-overlay"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isHovered ? 1 : 0 }}
+        transition={{ duration: 0.3 }}
+      >
+        <motion.div className="card-icons">
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => console.log('Save location')}
+          >
+            <FaBookmark />
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => onPlaceSelect(place)}
+          >
+            <FaInfoCircle />
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => console.log('Share')}
+          >
+            <FaShare />
+          </motion.button>
+        </motion.div>
+      </motion.div>
     </motion.div>
   );
 };
@@ -39,6 +68,7 @@ const CardList = ({ filters, searchTerm, onPlaceSelect }) => {
     const fetchGooglePlacesData = async () => {
       try {
         const response = await axios.get('/api/places');
+        console.log('API Response:', response.data); // Log the response data
 
         if (Array.isArray(response.data)) {
           setPlaces(response.data);
