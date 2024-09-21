@@ -12,6 +12,7 @@ import icon3 from "../../assets/img/icon3.jpg";
 
 import img3 from "../../assets/img/img3.jpg";
 import './About.css'; // Import the CSS file for styling
+import './MediaAbout.css'; // Import the CSS file for styling
 
 const About = () => {
     return (

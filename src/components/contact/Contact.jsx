@@ -88,9 +88,9 @@ const Contact = () => {
               ref={form}
               onSubmit={sendEmail}
             >
-              <input type="text" id="name" placeholder="enter your full name" name="to_name" required />
+              <input type="text" id="name" placeholder="Enter your full name" name="to_name" required />
 
-              <input type="email" id="email" placeholder="enter your email here" name="from_name" required />
+              <input type="email" id="email" placeholder="Enter your email here" name="from_name" required />
 
               <textarea
                 id="message"

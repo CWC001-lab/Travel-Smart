@@ -701,8 +701,11 @@ margin-bottom: 3%;
 @media (max-width: 768px) {
   .tour-grid {
     grid-template-columns: 1fr;
-  }
+
+
 }
+}
+
 
 
 
