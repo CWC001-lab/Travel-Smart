@@ -41,16 +41,15 @@ const getRecommendedActivity = (types) => {
 app.get('/api/places', async (req, res) => {
   try {
     const destinations = {
-      'Africa': ['Cairo', 'Cape Town', 'Marrakech', 'Nairobi', 'Victoria Falls'],
-      'Asia': ['Tokyo', 'Bangkok', 'Singapore', 'Dubai', 'Hong Kong'],
-      'Europe': ['Paris', 'Rome', 'London', 'Barcelona', 'Amsterdam'],
-      'North America': ['New York', 'San Francisco', 'Vancouver', 'Mexico City', 'Havana'],
-      'South America': ['Rio de Janeiro', 'Buenos Aires', 'Cusco', 'Cartagena', 'Santiago'],
-      'Oceania': ['Sydney', 'Auckland', 'Bali', 'Fiji', 'Queenstown']
+      'Africa': ['Cairo', 'Cape Town'],
+      'Asia': ['Tokyo', 'Bangkok'],
+      'Europe': ['Paris', 'Rome'],
+      'North America': ['New York', 'San Francisco'],
+      'South America': ['Rio de Janeiro', 'Buenos Aires'],
+      'Oceania': ['Sydney', 'Auckland']
     };
 
     let places = await Promise.all(Object.entries(destinations).flatMap(async ([continent, cities]) => {
-      // Get data for all cities in each continent
       return await Promise.all(cities.map(async (city) => {
         const response = await axios.get('https://maps.googleapis.com/maps/api/place/textsearch/json', {
           params: {
@@ -61,60 +60,35 @@ app.get('/api/places', async (req, res) => {
 
         if (response.data.status !== 'OK') {
           console.error(`Failed to fetch data for ${city}: ${response.data.error_message}`);
-          return []; // Return empty array if there's an error, so other cities can still be processed
+          return null;
         }
 
-        // Process up to 7 attractions per city
-        return await Promise.all(response.data.results.slice(0, 7).map(async (place) => {
-          const photoReference = place.photos && place.photos[0].photo_reference;
-          const photoUrl = photoReference
-            ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photoReference}&key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`
-            : 'https://via.placeholder.com/400';
+        const place = response.data.results[0]; // Get only the first result
+        const photoReference = place.photos && place.photos[0].photo_reference;
+        const photoUrl = photoReference
+          ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photoReference}&key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`
+          : 'https://via.placeholder.com/400';
 
-          // Fetch additional details
-          const detailsResponse = await axios.get('https://maps.googleapis.com/maps/api/place/details/json', {
-            params: {
-              place_id: place.place_id,
-              fields: 'name,formatted_address,geometry,rating,types,photos',
-              key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
-            }
-          });
+        const country = place.formatted_address 
+          ? place.formatted_address.split(',').slice(-1)[0].trim()
+          : 'Unknown';
 
-          const details = detailsResponse.data.result;
-
-          // Use a hypothetical accommodation API (replace with actual API call)
-          const accommodationTypes = ['Hotel', 'Hostel', 'Apartment', 'Resort', 'Guesthouse'];
-          const accommodation = accommodationTypes[Math.floor(Math.random() * accommodationTypes.length)];
-
-          // Use a hypothetical transport API (replace with actual API call)
-          const transportOptions = ['Bus', 'Metro', 'Taxi', 'Bike rental', 'Walking tours'];
-          const transportation = transportOptions[Math.floor(Math.random() * transportOptions.length)];
-
-          const recommendedActivity = getRecommendedActivity(details.types);
-
-          return {
-            id: place.place_id,
-            name: place.name,
-            city: city,
-            country: place.formatted_address.split(',').slice(-1)[0].trim(),
-            continent: continent,
-            location: `${place.geometry.location.lat.toFixed(2)}, ${place.geometry.location.lng.toFixed(2)}`,
-            rating: place.rating,
-            image: photoUrl,
-            tourTypes: getRandomTourTypes(),
-            transportation: transportation,
-            accommodation: accommodation,
-            attractions: details.types.filter(type => ['tourist_attraction', 'point_of_interest', 'landmark'].includes(type)).join(', '),
-            description: `Located in the city of ${city}, ${continent}, this destination is known for its cultural heritage and beautiful scenery. It's an ideal location for ${recommendedActivity}.`
-          };
-        }));
+        return {
+          id: place.place_id,
+          name: place.name,
+          city: city,
+          country: country,
+          continent: continent,
+          rating: place.rating,
+          image: photoUrl,
+          description: `A popular destination in ${city}, ${continent}.`
+        };
       }));
     }));
 
-    // Flatten the array, sort by rating, and limit to 40 results
-    places = places.flat(2).sort((a, b) => a.rating - b.rating).slice(0, 40);
+    places = places.flat().filter(place => place !== null);
 
-    console.log('Places:', places); // Log the places data
+    console.log('Places:', places);
     res.json(places);
   } catch (error) {
     console.error('Error fetching Google Places data:', error.message);

@@ -22,7 +22,7 @@ Taking you on a Tour Around
             <h4>Get in Touch</h4>
             <hr />
             <p>Location:</p>
-            Lorem ipsum dolor sit amet consectetur adipisi jjuhihijin. <br />{" "}
+            contact us here <br />{" "}
             <br />
             <p>Contact:</p>
             Phone : +234 780067172 <br />

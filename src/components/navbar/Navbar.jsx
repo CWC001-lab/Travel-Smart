@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useInView } from 'react-intersection-observer';
 import './Navbar.css';
 
 export const NavBar = () => {
@@ -8,6 +9,10 @@ export const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const navRef = useRef(null);
+  const [ref, inView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,8 +46,16 @@ export const NavBar = () => {
     setIsOpen(false);
   };
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('menu-open');
+    } else {
+      document.body.classList.remove('menu-open');
+    }
+  }, [isOpen]);
+
   return (
-    <nav ref={navRef} className={`navbar ${visible ? 'visible' : 'hidden'} ${isOpen ? 'open' : ''}`}>
+    <nav ref={ref} className={`navbar navbar-overlay ${visible ? 'visible' : 'hidden'} ${isOpen ? 'open' : ''} ${inView ? 'fade-in' : ''}`}>
       <div className="navbar-container">
         <Link to="/" className="navbar-brand" onClick={closeMenu}>Travel Smart</Link>
         <button className="navbar-toggle" onClick={toggleMenu}>
@@ -52,7 +65,7 @@ export const NavBar = () => {
           <Link to="/" className={`navbar-item ${location.pathname === '/' ? 'active' : ''}`} onClick={closeMenu}>Home</Link>
           <Link to="/about" className={`navbar-item ${location.pathname === '/about' ? 'active' : ''}`} onClick={closeMenu}>About</Link>
           <Link to="/trips-catalog" className={`navbar-item ${location.pathname === '/trips-catalog' ? 'active' : ''}`} onClick={closeMenu}>Trips Catalog</Link>
-          <Link to="/trips-review" className={`navbar-item ${location.pathname === '/trips-review' ? 'active' : ''}`} onClick={closeMenu}>Trip Reviews</Link>
+          <Link to="/trip-reviews" className={`navbar-item ${location.pathname === '/trip-reviews' ? 'active' : ''}`} onClick={closeMenu}>Trip Reviews</Link>
           <Link to="/contact-us" className={`navbar-item ${location.pathname === '/contact-us' ? 'active' : ''}`} onClick={closeMenu}>Contact Us</Link>
         </div>
       </div>
