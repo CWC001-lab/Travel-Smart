@@ -232,14 +232,14 @@ const Home = () => {
           </div>
 
           <div className="info-text">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
-            cumque deserunt quo, ab obcaecati aperiam? Omnis placeat sunt
-            impedit sed et minima unde rerum, a dolor quos assumenda? Excepturi,
-            dolorum? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Quibusdam velit ipsam officia tempora, doloribus consequatur,
-            architecto exercitationem voluptas rem, consequuntur enim. Tempore
-            impedit incidunt ipsum, consectetur adipisci dolorem quia
-            necessitatibus.
+            At Travel Smart, we're dedicated to transforming your travel dreams into reality. 
+            With a decade of experience, we've mastered the art of crafting personalized 
+            journeys that blend adventure, culture, and relaxation. Our innovative approach 
+            combines cutting-edge technology with deep local knowledge, ensuring you 
+            experience each destination like a true insider. From hidden gems to iconic 
+            landmarks, we curate every aspect of your trip to create unforgettable memories. 
+            Join the thousands of satisfied travelers who've discovered the world with 
+            Travel Smart, and let us redefine your notion of exploration.
           </div>
 
           <div className="info-button">
@@ -282,9 +282,8 @@ const Home = () => {
         <div className="AboutText">
           <h1>About Us </h1>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam optio, explicabo facilis dolorum eius officia nam amet odit aspernatur neque nostrum incidunt, labore fugit, ipsa ipsum error. Ratione, recusandae deleniti.
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi, adipisci ipsam illo molestias ratione nihil eum, possimus dolores dicta voluptate at quas, repellat beatae porro autem eveniet blanditiis ea dolore?
-          </p>
+  At Travel Smart, we're passionate about creating unforgettable travel experiences. Our expert team combines cutting-edge technology with local insights to craft personalized itineraries that cater to your unique preferences and travel style. From hidden gems to iconic landmarks, we're here to make your journey extraordinary.
+</p>
 
           <span className="social-icons">
             <FaFacebook size={35} />

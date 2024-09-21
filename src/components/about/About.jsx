@@ -36,8 +36,8 @@ const About = () => {
               <h1>A Paradise Village</h1>
 
               <p>
-                Discover a hidden gem nestled in nature's embrace. Our paradise village offers a perfect blend of tranquility and adventure, where every moment becomes a cherished memory.
-              </p>
+  Nestled in the heart of nature, our curated destinations offer a perfect blend of tranquility and adventure. Immerse yourself in breathtaking landscapes, rich cultures, and unforgettable experiences that will create lasting memories.
+</p>
 
               
                 <div className="statistics">
@@ -140,7 +140,7 @@ const About = () => {
 <figcaption>
 
                         <h3>Serenity</h3>
-                        <p>Find peace in our tranquil surroundings. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <p>Find peace in our carefully selected tranquil surroundings. Escape the hustle and bustle of everyday life and reconnect with nature and yourself.</p>
 </figcaption>
                       </figure>
 
@@ -149,8 +149,8 @@ const About = () => {
                         <img src={icon2} alt="Serenity" />
 <figcaption>
 
-                        <h3>Serenity</h3>
-                        <p>Find peace in our tranquil surroundings. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+<h3>Adventure</h3>
+<p>Embark on thrilling experiences tailored to your preferences. From gentle hikes to adrenaline-pumping activities, we've got something for every adventurer.</p>
 </figcaption>
                       </figure>
 
@@ -159,8 +159,8 @@ const About = () => {
                         <img src={icon3} alt="Serenity" />
 <figcaption>
 
-                        <h3>Serenity</h3>
-                        <p>Find peace in our tranquil surroundings. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+<h3>Culture</h3>
+<p>Immerse yourself in local traditions and customs. Our guided tours and interactive experiences bring you closer to the heart of each destination.</p>
 </figcaption>
                       </figure>
                       

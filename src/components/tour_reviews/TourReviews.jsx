@@ -7,12 +7,19 @@ import TestimonialCard from "./TestimonialCard";
 import card1 from "../../assets/img/card1.jpg";
 import card4 from "../../assets/img/card4.jpg";
 import card6 from "../../assets/img/card6.jpg";
-import card7 from "../../assets/img/card7.jpg";
-import card8 from "../../assets/img/card8.jpg";
-import card10 from "../../assets/img/card10.jpg";
-import chinapics from "../../assets/img/chinapics.jpg";
+import rio from "../../assets/img/rio.jpg";
+import sanfrancsico from "../../assets/img/sanfrancsico.jpeg";
+import serengetisafari from "../../assets/img/serengetisafari.jpg";
+import tokyo from "../../assets/img/tokyo.jpg";
+import newyork from "../../assets/img/newyork.jpg";
+import machupicchu from "../../assets/img/machupicchu.jpg";
+import greatallofchna from "../../assets/img/greatallofchna.jpg";
+import balltemple from "../../assets/img/balltemple.jpg";
+import Bangkok from "../../assets/img/Bangkok.jpeg";
+import cairopyramid from "../../assets/img/cairopyramid.jpg";
+import capetowncitytablemountain from "../../assets/img/capetowncitytablemountain.jpg";
+import victoriafall from "../../assets/img/victoriafall.png";
 import parispic from "../../assets/img/parispic.jpeg";
-import europe from "../../assets/img/europe.jpg";
 import reviewpic1 from "../../assets/img/reviewpic1.jpg";
 import reviewpic2 from "../../assets/img/reviewpic2.jpg";
 import reviewpic3 from "../../assets/img/reviewpic3.jpg";
@@ -61,28 +68,28 @@ export const TourReviews = () => {
     {
       title: "Tokyo Sushi Making Class",
       description: "Learn to make authentic Japanese sushi",
-      image: "../../assets/img/tokyo.jpg",
+      image: tokyo,
       rating: 4.7,
       price: "$120"
     },
     {
       title: "Great Wall of China Hike",
       description: "Walk along one of the world's wonders",
-      image: "../../assets/img/great-wall.jpg",
+      image: greatallofchna,
       rating: 4.8,
       price: "$180"
     },
     {
       title: "Bali Temple and Rice Terrace Tour",
       description: "Discover Bali's cultural and natural beauty",
-      image: "../../assets/img/bali.jpg",
+      image: balltemple,
       rating: 4.6,
       price: "$90"
     },
     {
       title: "Bangkok Street Food Tour",
       description: "Taste the flavors of Thailand",
-      image: "../../assets/img/bangkok.jpg",
+      image: Bangkok,
       rating: 4.5,
       price: "$70"
     },
@@ -91,28 +98,28 @@ export const TourReviews = () => {
     {
       title: "New York City in a Day",
       description: "Experience the Big Apple's highlights",
-      image: "../../assets/img/new-york.jpg",
+      image: newyork,
       rating: 4.6,
       price: "$250"
     },
     {
       title: "Machu Picchu Adventure",
       description: "Explore the ancient Incan citadel",
-      image: "../../assets/img/machu-picchu.jpg",
+      image: machupicchu,
       rating: 4.9,
       price: "$400"
     },
     {
       title: "Rio de Janeiro Highlights",
       description: "Discover the Marvelous City",
-      image: "../../assets/img/rio.jpg",
+      image: rio,
       rating: 4.5,
       price: "$180"
     },
     {
       title: "San Francisco Bay Cruise",
       description: "See the Golden Gate Bridge from the water",
-      image: "../../assets/img/san-francisco.jpg",
+      image: sanfrancsico,
       rating: 4.3,
       price: "$90"
     },
@@ -122,28 +129,28 @@ export const TourReviews = () => {
     {
       title: "Serengeti Safari",
       description: "Witness the great migration",
-      image: "../../assets/img/serengeti.jpg",
+      image: serengetisafari,
       rating: 4.9,
       price: "$2000"
     },
     {
       title: "Cairo Pyramids Tour",
       description: "Explore the last standing wonder of the ancient world",
-      image: "../../assets/img/pyramids.jpg",
+      image: cairopyramid,
       rating: 4.7,
       price: "$150"
     },
     {
       title: "Cape Town City and Table Mountain",
       description: "Discover the beauty of Cape Town",
-      image: "../../assets/img/cape-town.jpg",
+      image: capetowncitytablemountain,
       rating: 4.6,
       price: "$120"
     },
     {
       title: "Victoria Falls Experience",
       description: "See one of the world's largest waterfalls",
-      image: "../../assets/img/victoria-falls.jpg",
+      image: victoriafall,
       rating: 4.8,
       price: "$180"
     },
