@@ -1,6 +1,7 @@
 import React, { useCallback, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./Home.css";
+import "./Media.css";
 import img1 from "../../assets/img/img1.jpg";
 import aboutimagecard1 from "../../assets/img/aboutimagecard1.jpg";
 import homepagecard1 from "../../assets/img/homepagecard1.jpg";
@@ -119,12 +120,12 @@ const Home = () => {
       <header className="header">
         <motion.div className="text-content" variants={containerVariants}>
           <motion.h1 className="outline-text" variants={itemVariants}>
-            Journey to All World Corners
+            Unlock Earth's Treasures
           </motion.h1>
           <motion.p variants={itemVariants}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi eum
-            cum culpa odio, vitae ad quod distinctio praesentium dignissimos
-            ipsum libero ab vero quos corrupti, fuga quae
+            Embark on a journey where GPS meets serendipity. Our smart routes 
+            weave through secret alleys and iconic landmarks, transforming your 
+            wanderlust into expertly curated, off-the-beaten-path adventures.
           </motion.p>
           <motion.button className="book-tour" variants={itemVariants}>
             Book a Tour
@@ -191,7 +192,7 @@ const Home = () => {
             <div className="image-text">
               <motion.p variants={itemVariants}></motion.p>
               <motion.p variants={itemVariants}></motion.p>
-              <motion.h1 variants={itemVariants}></motion.h1>
+              <motion.h1 variants={itemVariants}explore></motion.h1>
             </div>
           </motion.div>
         </motion.div>
@@ -252,59 +253,46 @@ const Home = () => {
           </div>
         </div>
 
-
-
         <div className="infoImage">
-
-      <div className="device-container">
-        <div className="device-item device-item-small">
-          <div className="device-screen">
-            <img src={homepagecard1} alt="Device 1" />
+          <div className="device-container">
+            <div className="device-item device-item-small">
+              <div className="device-screen">
+                <img src={homepagecard1} alt="Device 1" />
+              </div>
+            </div>
+            <div className="device-item device-item-medium">
+              <div className="device-screen">
+                <img src={homepagecard2} alt="Device 2" />
+              </div>
+            </div>
+            <div className="device-item device-item-large">
+              <div className="device-screen">
+                <img src={homepagecard3} alt="Device 3" />
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="device-item device-item-medium">
-          <div className="device-screen">
-            <img src={homepagecard2} alt="Device 2" />
-          </div>
-        </div>
-        <div className="device-item device-item-large">
-          <div className="device-screen">
-            <img src={homepagecard3} alt="Device 3" />
-          </div>
-        </div>
-      </div>
-
-
         </div>
       </section>
-
-
-
-
-
-
 
       <section className="AboutContainer">
-<div className="AboutImage">
-<img src={aboutimagecard1} alt="about" />
-</div>
+        <div className="AboutImage">
+          <img src={aboutimagecard1} alt="about" />
+        </div>
 
-<div className="AboutText">
-<h1>About Us </h1>
-<p>
-  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam optio, explicabo facilis dolorum eius officia nam amet odit aspernatur neque nostrum incidunt, labore fugit, ipsa ipsum error. Ratione, recusandae deleniti.
-  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi, adipisci ipsam illo molestias ratione nihil eum, possimus dolores dicta voluptate at quas, repellat beatae porro autem eveniet blanditiis ea dolore?
-</p>
+        <div className="AboutText">
+          <h1>About Us </h1>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam optio, explicabo facilis dolorum eius officia nam amet odit aspernatur neque nostrum incidunt, labore fugit, ipsa ipsum error. Ratione, recusandae deleniti.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi, adipisci ipsam illo molestias ratione nihil eum, possimus dolores dicta voluptate at quas, repellat beatae porro autem eveniet blanditiis ea dolore?
+          </p>
 
-<span className="social-icons">
-<FaFacebook size={35} />
-              <FaTwitter size={35} />
-              <FaAccessibleIcon size={35} />
-</span>
-</div>
+          <span className="social-icons">
+            <FaFacebook size={35} />
+            <FaTwitter size={35} />
+            <FaAccessibleIcon size={35} />
+          </span>
+        </div>
       </section>
-
-
 
       <section className="Destinations">
         <h1>Destinations</h1>
@@ -334,10 +322,6 @@ const Home = () => {
         )}
       </AnimatePresence>
 
-
-
-
-
       <section className="Tours">
         <h2>Our Tours</h2>
         <div className="tour-grid">
@@ -347,7 +331,7 @@ const Home = () => {
         </div>
       </section>
 
-<Newsletter />
+      <Newsletter />
 
     </motion.div>
   );

@@ -33,7 +33,7 @@ nav ul li a:hover {
   color: #dbe1e6;
 }
 
-.hero {
+.Contact-hero {
     width: 100%;
     height: 60vh;
     background-image: url(../../assets/img/img3.jpg); /* Replace with your image path */
@@ -48,7 +48,7 @@ background-attachment: fixed;
     margin-bottom: 30px;
   }
   
-  .hero::before {
+  .Contact-hero::before {
     content: '';
     position: absolute;
     top: 0;
@@ -58,7 +58,7 @@ background-attachment: fixed;
     background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
   }
   
-  .hero-content {
+  .Contact-Bannerhero {
     position: relative;
     z-index: 1;
     text-align: center;
@@ -67,18 +67,15 @@ background-attachment: fixed;
     max-width: 600px;
   }
   
-  .endless-beauty h2 {
-    font-size: 2.5rem;
-    margin-bottom: 15px;
-  }
   
-  .endless-beauty p {
+  .Contact-Bannerhero p {
     font-size: 1.2rem;
     margin-bottom: 20px;
   }
-.hero h2 {
-  font-size: 2rem;
+.Contact-Bannerhero h1 {
+  font-size: 5rem;
   margin: 0;
+  font-weight: 1000;
 }
 
 #contact-us {

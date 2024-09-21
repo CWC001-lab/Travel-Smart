@@ -4,7 +4,22 @@ import { motion, useAnimationFrame } from "framer-motion";
 import { FaPlus } from "react-icons/fa";
 import { TourReviewCard } from "./TourReviewCard";
 import TestimonialCard from "./TestimonialCard";
-import img1 from "../../assets/img/img1.jpg";
+import card1 from "../../assets/img/card1.jpg";
+import card4 from "../../assets/img/card4.jpg";
+import card6 from "../../assets/img/card6.jpg";
+import card7 from "../../assets/img/card7.jpg";
+import card8 from "../../assets/img/card8.jpg";
+import card10 from "../../assets/img/card10.jpg";
+import chinapics from "../../assets/img/chinapics.jpg";
+import parispic from "../../assets/img/parispic.jpeg";
+import europe from "../../assets/img/europe.jpg";
+import reviewpic1 from "../../assets/img/reviewpic1.jpg";
+import reviewpic2 from "../../assets/img/reviewpic2.jpg";
+import reviewpic3 from "../../assets/img/reviewpic3.jpg";
+import reviewpic4 from "../../assets/img/reviewpic4.jpg";
+import reviewpic5 from "../../assets/img/reviewpic5.jpg";
+import reviewpic6 from "../../assets/img/reviewpic6.jpg";
+
 import "./TourReviews.css";
 
 export const TourReviews = () => {
@@ -15,59 +30,32 @@ export const TourReviews = () => {
     {
       title: "Paris City Tour",
       description: "Explore the City of Light",
-      image: "../../assets/img/paris.jpg",
+      image: parispic,
       rating: 4.5,
       price: "$199"
     },
     {
       title: "Rome Historical Walk",
       description: "Step back in time in the Eternal City",
-      image: "../../assets/img/rome.jpg",
+      image: card1,
       rating: 4.7,
       price: "$180"
     },
     {
       title: "Amsterdam Canal Cruise",
       description: "Discover the Venice of the North",
-      image: "../../assets/img/amsterdam.jpg",
+      image: card4,
       rating: 4.3,
       price: "$75"
     },
     {
       title: "Barcelona Gaudi Tour",
       description: "Experience Gaudi's architectural marvels",
-      image: "../../assets/img/barcelona.jpg",
+      image: card6,
       rating: 4.6,
       price: "$150"
     },
-    {
-      title: "London Royal Tour",
-      description: "Visit the iconic royal landmarks",
-      image: "../../assets/img/london.jpg",
-      rating: 4.4,
-      price: "$210"
-    },
-    {
-      title: "Prague Castle Tour",
-      description: "Explore the largest ancient castle complex",
-      image: "../../assets/img/prague.jpg",
-      rating: 4.5,
-      price: "$100"
-    },
-    {
-      title: "Vienna Classical Music Tour",
-      description: "Immerse in the city's rich musical heritage",
-      image: "../../assets/img/vienna.jpg",
-      rating: 4.8,
-      price: "$190"
-    },
-    {
-      title: "Greek Islands Cruise",
-      description: "Sail through the beautiful Aegean Sea",
-      image: "../../assets/img/greek-islands.jpg",
-      rating: 4.9,
-      price: "$1200"
-    },
+   
 
     // Asia (8 reviews)
     {
@@ -98,35 +86,7 @@ export const TourReviews = () => {
       rating: 4.5,
       price: "$70"
     },
-    {
-      title: "Angkor Wat Sunrise Tour",
-      description: "Witness a magical sunrise at Angkor Wat",
-      image: "../../assets/img/angkor-wat.jpg",
-      rating: 4.9,
-      price: "$150"
-    },
-    {
-      title: "Mount Fuji Day Trip",
-      description: "Visit Japan's iconic mountain",
-      image: "../../assets/img/mount-fuji.jpg",
-      rating: 4.7,
-      price: "$200"
-    },
-    {
-      title: "Singapore City Highlights",
-      description: "Experience the best of Singapore in a day",
-      image: "../../assets/img/singapore.jpg",
-      rating: 4.4,
-      price: "$130"
-    },
-    {
-      title: "Taj Mahal Sunrise Tour",
-      description: "See the Taj Mahal at its most beautiful",
-      image: "../../assets/img/taj-mahal.jpg",
-      rating: 4.8,
-      price: "$220"
-    },
-
+ 
     // Americas (8 reviews)
     {
       title: "New York City in a Day",
@@ -156,34 +116,7 @@ export const TourReviews = () => {
       rating: 4.3,
       price: "$90"
     },
-    {
-      title: "Yellowstone National Park Tour",
-      description: "Explore America's first national park",
-      image: "../../assets/img/yellowstone.jpg",
-      rating: 4.7,
-      price: "$300"
-    },
-    {
-      title: "Cancun Beach Getaway",
-      description: "Relax on Mexico's stunning Caribbean coast",
-      image: "../../assets/img/cancun.jpg",
-      rating: 4.4,
-      price: "$450"
-    },
-    {
-      title: "Alaska Glacier Cruise",
-      description: "Witness the majesty of Alaska's glaciers",
-      image: "../../assets/img/alaska.jpg",
-      rating: 4.8,
-      price: "$1200"
-    },
-    {
-      title: "Quebec City Winter Carnival",
-      description: "Experience the magic of winter in Quebec",
-      image: "../../assets/img/quebec.jpg",
-      rating: 4.5,
-      price: "$220"
-    },
+  
 
     // Africa (8 reviews)
     {
@@ -214,60 +147,33 @@ export const TourReviews = () => {
       rating: 4.8,
       price: "$180"
     },
-    {
-      title: "Marrakech Medina Tour",
-      description: "Navigate the vibrant souks of Marrakech",
-      image: "../../assets/img/marrakech.jpg",
-      rating: 4.5,
-      price: "$80"
-    },
-    {
-      title: "Zanzibar Beach Retreat",
-      description: "Relax on the pristine beaches of Zanzibar",
-      image: "../../assets/img/zanzibar.jpg",
-      rating: 4.7,
-      price: "$600"
-    },
-    {
-      title: "Namibia Desert Safari",
-      description: "Explore the otherworldly landscapes of Namibia",
-      image: "../../assets/img/namibia.jpg",
-      rating: 4.8,
-      price: "$1500"
-    },
-    {
-      title: "Gorilla Trekking in Uganda",
-      description: "Encounter mountain gorillas in their natural habitat",
-      image: "../../assets/img/uganda.jpg",
-      rating: 4.9,
-      price: "$1800"
-    }
+  
   ];
 
   const testimonials = [
     {
-      image: "../../assets/img/testimonial1.jpg",
+      image: reviewpic1,
       name: "John Doe",
       title: "Adventure Enthusiast",
       testimonial: "The tour exceeded all my expectations. I'll definitely be booking again!",
       rating: 5
     },
     {
-      image: "../../assets/img/testimonial2.jpg",
+      image: reviewpic2,
       name: "Jane Smith",
       title: "Cultural Explorer",
       testimonial: "An unforgettable experience that opened my eyes to new cultures.",
       rating: 4
     },
     {
-      image: "../../assets/img/testimonial3.jpg",
+      image: reviewpic3,
       name: "Mike Johnson",
       title: "Nature Lover",
       testimonial: "The breathtaking landscapes we saw were worth every penny.",
       rating: 5
     },
     {
-      image: "../../assets/img/testimonial4.jpg",
+      image: reviewpic4,
       name: "Emily Brown",
       title: "Solo Traveler",
       testimonial: "I felt safe and well-cared for throughout the entire journey.",
@@ -341,28 +247,28 @@ export const TourReviews = () => {
               <Tab.Content>
                 <Tab.Pane eventKey="tab1">
                   <Row>
-                    {reviews.slice(0, 8).map((review, index) => (
+                    {reviews.slice(0, 4).map((review, index) => (
                       <TourReviewCard key={index} {...review} />
                     ))}
                   </Row>
                 </Tab.Pane>
                 <Tab.Pane eventKey="tab2">
                   <Row>
-                    {reviews.slice(8, 16).map((review, index) => (
+                    {reviews.slice(4, 8).map((review, index) => (
                       <TourReviewCard key={index + 8} {...review} />
                     ))}
                   </Row>
                 </Tab.Pane>
                 <Tab.Pane eventKey="tab3">
                   <Row>
-                    {reviews.slice(16, 24).map((review, index) => (
+                    {reviews.slice(8, 12).map((review, index) => (
                       <TourReviewCard key={index + 16} {...review} />
                     ))}
                   </Row>
                 </Tab.Pane>
                 <Tab.Pane eventKey="tab4">
                   <Row>
-                    {reviews.slice(24, 32).map((review, index) => (
+                    {reviews.slice(12, 16).map((review, index) => (
                       <TourReviewCard key={index + 24} {...review} />
                     ))}
                   </Row>

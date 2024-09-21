@@ -37,9 +37,13 @@ const Contact = () => {
 
   return (
     <div className="contact-page">
-      <div className="hero">
-        <h2>Explore Our Location</h2>
-      </div>
+<header className='Contact-hero'>
+  <div className='Contact-Bannerhero'>
+    <h1>Contact Us</h1>
+    <p>In need of more information and reviews </p>
+  </div>
+</header>
+
 
       <section id="contact-us">
         <h2>Contact Us</h2>
@@ -84,17 +88,15 @@ const Contact = () => {
               ref={form}
               onSubmit={sendEmail}
             >
-              <label htmlFor="name">Full Name:</label>
-              <input type="text" id="name" name="to_name" required />
+              <input type="text" id="name" placeholder="enter your full name" name="to_name" required />
 
-              <label htmlFor="email">Email Address:</label>
-              <input type="email" id="email" name="from_name" required />
+              <input type="email" id="email" placeholder="enter your email here" name="from_name" required />
 
-              <label htmlFor="message">Message:</label>
               <textarea
                 id="message"
                 name="message"
                 rows="4"
+                placeholder="Type in your message here"
                 required
               ></textarea>
 

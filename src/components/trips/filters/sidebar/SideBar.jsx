@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 import { FaFilter, FaTimes } from 'react-icons/fa';
 import './SideBar.css';
 
-// List of countries with their flags (emoji flags)
 const countries = [
   { code: '', name: 'All Countries', flag: '🌎' },
   { code: 'US', name: 'United States', flag: '🇺🇸' },
