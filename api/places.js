@@ -33,5 +33,51 @@ const getRecommendedActivity = (types) => {
 };
 
 export default async function handler(req, res) {
-  res.status(200).json({ message: 'API is working' });
+  if (req.method === 'GET') {
+    try {
+      console.log('API request received');
+      
+      const destinations = {
+        'Africa': ['Cairo', 'Cape Town'],
+        'Asia': ['Tokyo', 'Bangkok'],
+        'Europe': ['Paris', 'Rome'],
+        'North America': ['New York', 'San Francisco'],
+        'South America': ['Rio de Janeiro', 'Buenos Aires'],
+        'Oceania': ['Sydney', 'Auckland']
+      };
+
+      let places = await Promise.all(Object.entries(destinations).flatMap(async ([continent, cities]) => {
+        return await Promise.all(cities.map(async (city) => {
+          console.log(`Fetching data for ${city}`);
+          const response = await axios.get('https://maps.googleapis.com/maps/api/place/textsearch/json', {
+            params: {
+              query: `tourist attractions in ${city}`,
+              key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY
+            }
+          });
+
+          if (response.data.status !== 'OK') {
+            console.error(`Failed to fetch data for ${city}: ${response.data.error_message}`);
+            return null;
+          }
+
+          // ... rest of the code ...
+        }));
+      }));
+
+      places = places.flat().filter(place => place !== null);
+
+      console.log('Places fetched successfully:', places.length);
+      res.status(200).json(places);
+    } catch (error) {
+      console.error('Error in API route:', error);
+      res.status(500).json({ 
+        error: error.message || 'An unexpected error occurred',
+        stack: error.stack
+      });
+    }
+  } else {
+    res.setHeader('Allow', ['GET']);
+    res.status(405).end(`Method ${req.method} Not Allowed`);
+  }
 }

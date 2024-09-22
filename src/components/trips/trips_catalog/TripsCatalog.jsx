@@ -39,6 +39,9 @@ const TripsCatalog = () => {
         console.log('Places fetched successfully:', response.data);
       } catch (error) {
         console.error('Error fetching places:', error);
+        if (error.response) {
+          console.error('Error response:', error.response.data);
+        }
       }
     };
 
