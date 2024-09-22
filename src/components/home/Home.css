@@ -84,7 +84,7 @@ body{
 .slider-container {
   position: relative;
   width: 100%;
-  display: none;
+  /* display: none; */
   margin-top: 10%;
   border-radius: 10px;
   height: 40vh; /* Adjust based on your needs */
@@ -398,8 +398,8 @@ body{
 
   .information-text{
 /* font-size: 100rem; */
-text-align: start;
-width: 70%;
+text-align: justify;
+width: 90%;
 margin-bottom: 3%;
   }
 

@@ -22,7 +22,7 @@ Taking you on a Tour Around
             <h4>Get in Touch</h4>
             <hr />
             <p>Location:</p>
-            contact us here <br />{" "}
+            Contact us here <br />{" "}
             <br />
             <p>Contact:</p>
             Phone : +234 780067172 <br />
@@ -36,17 +36,17 @@ Taking you on a Tour Around
                 <a href="/">Home</a>
               </li>
               <li>
-                <a href="/About">About</a>
+                <a href="/about">About</a>
               </li>
               <li>
-                <a href="/Trips">Trips</a>
+                <a href="/trips-catalog">Trips</a>
               </li>
               <li>
-                <a href="/Trips Reviews">Trips Reviews</a>
+                <a href="/trip-reviews">Trips Reviews</a>
               </li>
 
               <li>
-                <a href="/Contact">Contact  </a>
+                <a href="/contact-us">Contact  </a>
               </li>
             </ul>
           </div>

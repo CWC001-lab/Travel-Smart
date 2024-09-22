@@ -234,7 +234,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="infomation-text">
+          <div className="information-text">
             At Travel Smart, we're dedicated to transforming your travel dreams into reality. 
             With a decade of experience, we've mastered the art of crafting personalized 
             journeys that blend adventure, culture, and relaxation. Our innovative approach 
