@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import './ContinentModal.css'; // Add this line
 
 const ContinentModal = ({ continent, onClose }) => {
   const continentInfo = {

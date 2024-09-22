@@ -44,9 +44,15 @@
         align-items: start;
     }
 
-    .info-text, .info-counter{
+    .info-counter{
         width: 90%;
         justify-content: start;
+    }
+
+    .information-text{
+        /* display: none; */
+
+        width: 100%;
     }
 
     .infoImage {
@@ -63,4 +69,26 @@
     .AboutText {
         margin-top: 20px;
     }
+}
+
+/* Small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  /* Add styles for small screens here */
+
+  }
+
+
+/* Medium devices (tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  /* Add styles for medium screens here */
+}
+
+/* Large devices (desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  /* Add styles for large screens here */
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  /* Add styles for extra large screens here */
 }
