@@ -1,8 +1,9 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import Sidebar from '../filters/sidebar/SideBar';
 import CardList from '../cards/Card';
 import Search from '../filters/search/Search';
 import Descriptions from '../descriptions/Descriptions';
+import axios from 'axios';
 import './TripsCatalog.css';
 
 const TripsCatalog = () => {
@@ -30,6 +31,19 @@ const TripsCatalog = () => {
   const handleCloseModal = () => {
     setSelectedPlace(null);
   };
+
+  useEffect(() => {
+    const fetchPlaces = async () => {
+      try {
+        const response = await axios.get('/api/places');
+        console.log('Places fetched successfully:', response.data);
+      } catch (error) {
+        console.error('Error fetching places:', error);
+      }
+    };
+
+    fetchPlaces();
+  }, []);
 
   return (
     <div className={`trips-catalog ${isSidebarOpen ? 'sidebar-open' : ''}`}>
