@@ -1,8 +1,8 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Sidebar from '../filters/sidebar/SideBar';
-import Card from '../cards/Card';
 import Search from '../filters/search/Search';
+import Card from '../cards/Card';
 import Descriptions from '../descriptions/Descriptions';
 import travelData from '../../../data/travel_data.json';
 import './TripsCatalog.css';
@@ -62,16 +62,12 @@ const TripsCatalog = () => {
 
   return (
     <div className={`trips-catalog ${isSidebarOpen ? 'sidebar-open' : ''}`}>
+      <Search onSearch={handleSearch} />
       <Sidebar 
         onFilterChange={handleFilterChange} 
         isOpen={isSidebarOpen}
         toggleSidebar={toggleSidebar}
         initialCountry={initialCountry}
-      />
-      <Search 
-        onSearch={handleSearch} 
-        toggleSidebar={toggleSidebar} 
-        isSidebarOpen={isSidebarOpen}
       />
       <div className="main-content">
         <h2 className="section-title">Popular Destinations</h2>

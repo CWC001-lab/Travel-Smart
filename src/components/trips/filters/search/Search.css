@@ -1,14 +1,14 @@
 .search-container {
   position: fixed;
-  top: 80px;
-right: 80px; /* Positioned right next to the sidebar toggle button */
+  top: 80px !important; /* Align with the sidebar toggle */
+  right: 80px; /* Keep it to the right of the sidebar toggle */
   z-index: 1000;
   display: flex;
   align-items: center;
 }
 
 .search-input {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #818285;
   border: none;
   border-radius: 20px;
   padding: 10px 20px;
@@ -19,11 +19,11 @@ right: 80px; /* Positioned right next to the sidebar toggle button */
 }
 
 .search-input::placeholder {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(34, 34, 34, 0.7);
 }
 
 .search-button {
-  background-color: #000000;
+  background-color: #1a2a6c;
   color: white;
   border: none;
   border-radius: 50%;
