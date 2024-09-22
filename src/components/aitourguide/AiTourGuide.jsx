@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import './AiTourGuide.css';
-import { FaRobot, FaTimes } from 'react-icons/fa';
+import { FaRobot, FaTimes, FaPaperPlane } from 'react-icons/fa';
 
 const AiTourGuide = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showGreeting, setShowGreeting] = useState(false);
   const [messages, setMessages] = useState([]);
+  const [inputValue, setInputValue] = useState('');
+  const inputRef = useRef(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -41,6 +43,27 @@ const AiTourGuide = () => {
     }
   };
 
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  };
+
+  const handleSubmit = () => {
+    if (inputValue.trim()) {
+      sendMessage(inputValue);
+      setInputValue('');
+      if (inputRef.current) {
+        inputRef.current.focus();
+      }
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      handleSubmit();
+    }
+  };
+
   return (
     <div className="ai-tour-guide">
       {showGreeting && !isOpen && (
@@ -63,16 +86,17 @@ const AiTourGuide = () => {
             ))}
           </div>
           <div className="chatbox-input">
-            <input
-              type="text"
+            <textarea
+              ref={inputRef}
+              value={inputValue}
+              onChange={handleInputChange}
+              onKeyPress={handleKeyPress}
               placeholder="Type your message..."
-              onKeyPress={(e) => {
-                if (e.key === 'Enter') {
-                  sendMessage(e.target.value);
-                  e.target.value = '';
-                }
-              }}
+              rows="1"
             />
+            <button className="submit-button" onClick={handleSubmit}>
+              <FaPaperPlane />
+            </button>
           </div>
         </div>
       )}

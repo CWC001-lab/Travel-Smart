@@ -91,6 +91,7 @@
 .statistics {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   flex-wrap: wrap;
   width: 100%;
   margin-bottom: 30px;
@@ -151,6 +152,7 @@
 
   .stat {
     min-width: 150px;
+    width: 100%;
   }
 
   .stat h3 {

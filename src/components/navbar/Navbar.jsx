@@ -59,7 +59,7 @@ export const NavBar = () => {
       <div className="navbar-container">
         <Link to="/" className="navbar-brand" onClick={closeMenu}>Travel Smart</Link>
         <button className="navbar-toggle" onClick={toggleMenu}>
-          <span className="navbar-toggle-icon"></span>
+          <div className="navbar-toggle-icon"></div>
         </button>
         <div className={`navbar-menu ${isOpen ? 'open' : ''}`}>
           <Link to="/" className={`navbar-item ${location.pathname === '/' ? 'active' : ''}`} onClick={closeMenu}>Home</Link>

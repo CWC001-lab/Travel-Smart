@@ -82,11 +82,41 @@
 
 .chatbox-input {
   padding: 10px;
+  display: flex;
+  align-items: center;
 }
 
-.chatbox-input input {
-  width: 100%;
+.chatbox-input textarea {
+  flex-grow: 1;
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  resize: none;
+  overflow-y: auto;
+  max-height: 100px;
+}
+
+.submit-button {
+  display: none;
+  margin-left: 10px;
+  background-color: #636363;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.message {
+  word-wrap: break-word;
+}
+
+/* Show submit button on mobile and tablet */
+@media (max-width: 1024px) {
+  .submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

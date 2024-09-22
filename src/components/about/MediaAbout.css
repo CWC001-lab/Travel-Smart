@@ -10,6 +10,24 @@
     .mixedimages{
         display: none;
     }
+    .CombinedImages{
+        height: fit-content;
+        margin-bottom: 100px;
+    }
+
+    .First-main-image{
+        min-height: 500px;
+    }
+    .First-top-left-image {
+        top: 30%;
+      }
+      .First-middle-right-image {
+        top: 55%;
+      }
+      .First-bottom-left-image {
+        bottom: -9%;
+        left: -5%;
+      }
 }
 
 @media only screen and (max-width: 768px) {
@@ -23,5 +41,9 @@
     .mixedimages{
         display: none;
     }
+    .First-bottom-left-image {
+        bottom: 1%;
+        left: -5%;
+      }
     
 }
