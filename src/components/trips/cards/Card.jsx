@@ -1,27 +1,40 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import axios from 'axios';
 import { FaBookmark, FaInfoCircle, FaShare } from 'react-icons/fa';
 import './Card.css';
 
-const Card = ({ place, index, onPlaceSelect }) => {
+const Card = ({ place, index, onPlaceSelect, cardType }) => {
   const [isHovered, setIsHovered] = useState(false);
+
+  // Add a check to ensure place is defined
+  if (!place) {
+    return null; // or return a placeholder component
+  }
 
   return (
     <motion.div
-      className="card"
+      className={`card ${cardType}-card`}
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.2 }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <img src={place.image} alt={place.name} className="card-image" />
+      {place.image && <img src={place.image} alt={place.name} className="card-image" />}
       <div className="card-content">
         <h3 className="card-title">{place.name}</h3>
-        <p className="card-location">{place.city}, {place.country}</p>
-        <span className="card-rating">{parseFloat(place.rating).toFixed(1)} ⭐</span>
-        <p className="card-description">{place.description}</p>
+        {place.location && (
+          <p className="card-location">
+            {place.location.city && `${place.location.city}, `}
+            {place.location.country}
+          </p>
+        )}
+        {place.rating && <span className="card-rating">{parseFloat(place.rating).toFixed(1)} ⭐</span>}
+        {place.price && <p className="card-price">Price: ${place.price}</p>}
+        {place.description && <p className="card-description">{place.description}</p>}
+        {place.accommodation && <p>Accommodation: {place.accommodation.join(', ')}</p>}
+        {place.transportation && <p>Transportation: {place.transportation.join(', ')}</p>}
+        {place.tourType && <p>Tour Type: {place.tourType.join(', ')}</p>}
       </div>
       <motion.div 
         className="card-overlay"
@@ -57,62 +70,4 @@ const Card = ({ place, index, onPlaceSelect }) => {
   );
 };
 
-const CardList = ({ filters, searchTerm, onPlaceSelect }) => {
-  const [places, setPlaces] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    const fetchPlacesData = async () => {
-      try {
-        const response = await axios.get('/api/places');
-        console.log('API Response:', response.data);
-
-        if (Array.isArray(response.data)) {
-          setPlaces(response.data);
-        } else {
-          setError('Unexpected response format');
-        }
-        setLoading(false);
-      } catch (error) {
-        console.error('Error fetching places data:', error);
-        console.error('Error details:', error.response?.data);
-        setError(`Failed to fetch data: ${error.message}`);
-        setLoading(false);
-      }
-    };
-
-    fetchPlacesData();
-  }, []);
-
-  const filteredPlaces = places.filter(place => 
-    place.rating >= (filters.rating || 0) &&
-    (filters.country ? place.country === filters.country : true) &&
-    (filters.tourTypes.length === 0 || filters.tourTypes.some(type => place.tourTypes.includes(type))) &&
-    (searchTerm ? place.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                  place.country.toLowerCase().includes(searchTerm.toLowerCase()) : true)
-  );
-
-  if (loading) return <div>Loading...</div>;
-
-  return (
-    <div className="card-list-container">
-      {error && <div className="error-message">{error}</div>}
-      <div className="card-list">
-        <h2 className="section-title">Popular Destinations</h2>
-        <div className="cards">
-          {filteredPlaces.map((place, index) => (
-            <Card 
-              key={place.id} 
-              place={place} 
-              index={index} 
-              onPlaceSelect={onPlaceSelect}
-            />
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default CardList;
+export default Card;

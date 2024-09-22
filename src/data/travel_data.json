@@ -1,0 +1,550 @@
+{
+    "popularDestinations": [
+      {
+        "id": "pd1",
+        "name": "Eiffel Tower",
+        "image": "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "location": {
+          "city": "Paris",
+          "country": "France"
+        },
+        "rating": 4.7,
+        "description": "Iconic iron lattice tower on the Champ de Mars, offering breathtaking views of the City of Light.",
+        "accommodationType": ["Hotels", "Apartments"],
+        "localTransportation": ["Metro", "Bus", "Bicycle"],
+        "price": 25,
+        "tourType": ["Sightseeing", "Cultural"]
+      },
+      {
+        "id": "pd2",
+        "name": "Machu Picchu",
+        "image": "https://images.unsplash.com/photo-1526392060635-9d6019884377?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "location": {
+          "city": "Cusco Region",
+          "country": "Peru"
+        },
+        "rating": 4.9,
+        "description": "Ancient Incan citadel set high in the Andes Mountains, offering a glimpse into a lost civilization.",
+        "accommodationType": ["Hotels", "Hostels", "Camping"],
+        "localTransportation": ["Train", "Bus", "Hiking"],
+        "price": 70,
+        "tourType": ["Historical", "Adventure"]
+      },
+      {
+        "id": "pd3",
+        "name": "Great Wall of China",
+        "image": "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "location": {
+          "city": "Beijing",
+          "country": "China"
+        },
+        "rating": 4.8,
+        "description": "Ancient fortification spanning thousands of miles, showcasing China's rich history and engineering prowess.",
+        "accommodationType": ["Hotels", "Guesthouses"],
+        "localTransportation": ["Bus", "Car", "Cable Car"],
+        "price": 40,
+        "tourType": ["Historical", "Cultural"]
+      },
+      {
+        "id": "pd4",
+        "name": "Santorini",
+        "image": "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "location": {
+          "city": "Santorini",
+          "country": "Greece"
+        },
+        "rating": 4.6,
+        "description": "Stunning Greek island known for its white-washed buildings, blue-domed churches, and breathtaking sunsets.",
+        "accommodationType": ["Hotels", "Villas"],
+        "localTransportation": ["Bus", "ATV", "Boat"],
+        "price": 100,
+        "tourType": ["Beach", "Romantic"]
+      },
+      {
+        "id": "pd5",
+        "name": "Grand Canyon",
+        "image": "https://images.unsplash.com/photo-1474044159687-1ee9f3a51722?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "location": {
+          "city": "Arizona",
+          "country": "United States"
+        },
+        "rating": 4.8,
+        "description": "Vast and colorful canyon carved by the Colorado River, offering spectacular views and hiking opportunities.",
+        "accommodationType": ["Hotels", "Lodges", "Camping"],
+        "localTransportation": ["Car", "Shuttle Bus", "Helicopter"],
+        "price": 35,
+        "tourType": ["Nature", "Adventure"]
+      }
+    ],
+    "tourPackages": [
+      {
+        "id": "tp1",
+        "name": "African Safari Adventure",
+        "image": "https://images.unsplash.com/photo-1516426122078-c23e76319801?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "location": {
+          "place": "Serengeti National Park",
+          "country": "Tanzania"
+        },
+        "price": 3500,
+        "accommodation": ["Luxury Tented Camps", "Lodges"],
+        "transportation": ["4x4 Safari Vehicles", "Small Aircraft"],
+        "rating": 4.9
+      },
+      {
+        "id": "tp2",
+        "name": "Inca Trail Expedition",
+        "image": "https://images.unsplash.com/photo-1526392060635-9d6019884377?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "location": {
+          "place": "Cusco",
+          "country": "Peru"
+        },
+        "price": 1200,
+        "accommodation": ["Camping", "Hostels"],
+        "transportation": ["Hiking", "Train"],
+        "rating": 4.7
+      },
+      {
+        "id": "tp3",
+        "name": "Japanese Culture Tour",
+        "image": "https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "location": {
+          "place": "Kyoto",
+          "country": "Japan"
+        },
+        "price": 2800,
+        "accommodation": ["Traditional Ryokans", "Hotels"],
+        "transportation": ["Bullet Train", "Bus"],
+        "rating": 4.8
+      },
+      {
+        "id": "tp4",
+        "name": "Greek Island Hopping",
+        "image": "https://images.unsplash.com/photo-1533105079780-92b9be482077?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "location": {
+          "place": "Cyclades",
+          "country": "Greece"
+        },
+        "price": 2200,
+        "accommodation": ["Hotels", "Vacation Rentals"],
+        "transportation": ["Ferry", "Boat"],
+        "rating": 4.6
+      },
+      {
+        "id": "tp5",
+        "name": "Northern Lights Expedition",
+        "image": "https://images.unsplash.com/photo-1579033461380-adb47c3eb938?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "location": {
+          "place": "Tromsø",
+          "country": "Norway"
+        },
+        "price": 3000,
+        "accommodation": ["Hotels", "Glass Igloos"],
+        "transportation": ["Bus", "Dog Sled"],
+        "rating": 4.7
+      }
+    ],
+    "continentalPackages": {
+      "Europe": [
+        {
+          "id": "cp_eu1",
+          "name": "Romantic Paris Getaway",
+          "image": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+          "location": {
+            "city": "Paris",
+            "country": "France"
+          },
+          "price": 1800,
+          "accommodation": ["Boutique Hotels"],
+          "transportation": ["Metro", "River Cruise"],
+          "rating": 4.7
+        },
+        {
+          "id": "cp_eu2",
+          "name": "Italian Culinary Tour",
+          "image": "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+          "location": {
+            "city": "Florence",
+            "country": "Italy"
+          },
+          "price": 2500,
+          "accommodation": ["Agriturismos", "City Hotels"],
+          "transportation": ["Train", "Walking Tours"],
+          "rating": 4.9
+        },
+        {
+          "id": "cp_eu3",
+          "name": "Scandinavian Fjords Cruise",
+          "image": "https://images.unsplash.com/photo-1601439678777-b2b3c56fa627?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+          "location": {
+            "city": "Bergen",
+            "country": "Norway"
+          },
+          "price": 3200,
+          "accommodation": ["Cruise Ship"],
+          "transportation": ["Cruise Ship", "Kayak"],
+          "rating": 4.8
+        },
+        {
+          "id": "cp_eu4",
+          "name": "Spanish Flamenco Experience",
+          "image": "https://images.unsplash.com/photo-1511527661048-7fe73d85e9a4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+          "location": {
+            "city": "Seville",
+            "country": "Spain"
+          },
+          "price": 1900,
+          "accommodation": ["Boutique Hotels"],
+          "transportation": ["Walking Tours", "Horse-drawn Carriage"],
+          "rating": 4.6
+        },
+        {
+          "id": "cp_eu5",
+          "name": "Swiss Alps Adventure",
+          "image": "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+          "location": {
+            "city": "Interlaken",
+            "country": "Switzerland"
+          },
+          "price": 2800,
+          "accommodation": ["Mountain Chalets", "Hotels"],
+          "transportation": ["Train", "Cable Car", "Hiking"],
+          "rating": 4.9
+        }
+      ],
+      "Asia": [
+        {
+          "id": "cp_as1",
+          "name": "Ancient Temples of Angkor",
+          "image": "https://images.unsplash.com/photo-1458734620913-7156099bda51?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+          "location": {
+            "city": "Siem Reap",
+            "country": "Cambodia"
+          },
+          "price": 1500,
+          "accommodation": ["Boutique Hotels"],
+          "transportation": ["Tuk-tuk", "Bicycle"],
+          "rating": 4.8
+        },
+        {
+          "id": "cp_as2",
+          "name": "Bali Spiritual Retreat",
+          "image": "https://images.unsplash.com/photo-1537996194471-e657df975ab4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+          "location": {
+            "city": "Ubud",
+            "country": "Indonesia"
+          },
+          "price": 2000,
+          "accommodation": ["Eco Resorts", "Yoga Retreats"],
+          "transportation": ["Scooter", "Walking"],
+          "rating": 4.7
+        },
+        {
+          "id": "cp_as3",
+          "name": "Great Wall and Terracotta Army Tour",
+          "image": "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+          "location": {
+            "city": "Beijing",
+            "country": "China"
+          },
+          "price": 2800,
+          "accommodation": ["Hotels"],
+          "transportation": ["High-speed Train", "Bus"],
+          "rating": 4.9
+        },
+        {
+          "id": "cp_as4",
+          "name": "Maldives Island Paradise",
+          "image": "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+          "location": {
+            "city": "Malé",
+            "country": "Maldives"
+          },
+          "price": 3500,
+          "accommodation": ["Overwater Bungalows"],
+          "transportation": ["Speedboat", "Seaplane"],
+          "rating": 4.9
+        },
+        {
+          "id": "cp_as5",
+          "name": "Tokyo Technology Tour",
+          "image": "https://images.unsplash.com/photo-1503899036084-c55cdd92da26?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+          "location": {
+            "city": "Tokyo",
+            "country": "Japan"
+          },
+          "price": 2600,
+          "accommodation": ["Capsule Hotels", "Smart Hotels"],
+          "transportation": ["Bullet Train", "Metro"],
+          "rating": 4.7
+        }
+      ],
+      "Africa": [
+        {
+          "id": "cp_af1",
+          "name": "Sahara Desert Expedition",
+          "image": "https://images.unsplash.com/photo-1509023464722-18d996393ca8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+          "location": {
+            "city": "Merzouga",
+            "country": "Morocco"
+          },
+          "price": 1800,
+          "accommodation": ["Desert Camps", "Riads"],
+          "transportation": ["4x4 Vehicles", "Camel Trek"],
+          "rating": 4.8
+        },
+        {
+          "id": "cp_af2",
+          "name": "Gorilla Trekking Adventure",
+          "image": "https://images.unsplash.com/photo-1521651201144-634f700b36ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+          "location": {
+            "city": "Bwindi Impenetrable Forest",
+            "country": "Uganda"
+          },
+          "price": 3000,
+          "accommodation": ["Eco Lodges"],
+          "transportation": ["4x4 Vehicles", "Hiking"],
+          "rating": 4.9
+        },
+        {
+          "id": "cp_af3",
+          "name": "Egyptian Pyramids and Nile Cruise",
+          "image": "https://images.unsplash.com/photo-1539768942893-daf53e448371?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+          "location": {
+            "city": "Cairo",
+            "country": "Egypt"
+          },
+          "price": 2500,
+          "accommodation": ["Hotels", "Nile Cruise Ship"],
+          "transportation": ["Bus", "Cruise Ship"],
+          "rating": 4.7
+        },
+        {
+          "id": "cp_af4",
+          "name": "Cape Town and Garden Route",
+          "image": "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+          "location": {
+            "city": "Cape Town",
+            "country": "South Africa"
+          },
+          "price": 2200,
+          "accommodation": ["Hotels", "Guesthouses"],
+          "transportation": ["Car Rental", "Guided Tours"],
+          "rating": 4.8
+        },
+        {
+          "id": "cp_af5",
+          "name": "Victoria Falls Experience",
+          "image": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+          "location": {
+            "city": "Livingstone",
+            "country": "Zambia"
+          },
+          "price": 1900,
+          "accommodation": ["Lodges"],
+          "transportation": ["Walking Tours", "Helicopter Rides"],
+          "rating": 4.6
+        }
+      ],
+      "North America": [
+        {
+          "id": "cp_na1",
+          "name": "New York City Explorer",
+          "image": "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+          "location": {
+            "city": "New York City",
+            "country": "United States"
+          },
+          "price": 2500,
+          "accommodation": ["Hotels"],
+          "transportation": ["Subway", "Walking Tours"],
+          "rating": 4.7
+        },
+        {
+          "id": "cp_na2",
+          "name": "Canadian Rockies Adventure",
+          "image": "https://images.unsplash.com/photo-1609863539625-6bbe3bc2b2f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+          "location": {
+            "city": "Banff",
+            "country": "Canada"
+          },
+          "price": 2800,
+          "accommodation": ["Mountain Lodges"],
+          "transportation": ["Car Rental", "Hiking"],
+          "rating": 4.9
+        },
+        {
+          "id": "cp_na3",
+          "name": "Hawaii Island Hopping",
+          "image": "https://images.unsplash.com/photo-1542259009477-d625272157b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+          "location": {
+            "city": "Honolulu",
+            "country": "United States"
+          },
+          "price": 3200,
+          "accommodation": ["Resorts", "Vacation Rentals"],
+          "transportation": ["Inter-island Flights", "Car Rental"],
+          "rating": 4.8
+        },
+        {
+          "id": "cp_na4",
+          "name": "Mexico's Mayan Riviera",
+          "image": "https://images.unsplash.com/photo-1518105779142-d975f22f1b0a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+          "location": {
+            "city": "Tulum",
+            "country": "Mexico"
+          },
+          "price": 2200,
+          "accommodation": ["Beach Resorts", "Eco Lodges"],
+          "transportation": ["Shuttle", "Bicycle"],
+          "rating": 4.6
+        },
+        {
+          "id": "cp_na5",
+          "name": "Alaska Wilderness Expedition",
+          "image": "https://images.unsplash.com/photo-1531176175280-33e81422a942?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+          "location": {
+            "city": "Anchorage",
+            "country": "United States"
+          },
+          "price": 3500,
+          "accommodation": ["Wilderness Lodges", "Camping"],
+          "transportation": ["Bush Plane", "Kayak"],
+          "rating": 4.9
+        }
+      ],
+      "South America": [
+        {
+          "id": "cp_sa1",
+          "name": "Amazon Rainforest Expedition",
+          "image": "https://images.unsplash.com/photo-1518182170546-07661fd94144?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+          "location": {
+            "city": "Manaus",
+            "country": "Brazil"
+          },
+          "price": 2200,
+          "accommodation": ["Eco Lodges", "River Boats"],
+          "transportation": ["Boat", "Hiking"],
+          "rating": 4.7
+        },
+        {
+          "id": "cp_sa2",
+          "name": "Patagonia Glacier Trek",
+          "image": "https://images.unsplash.com/photo-1531761535209-180857e963b9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+          "location": {
+            "city": "El Calafate",
+            "country": "Argentina"
+          },
+          "price": 2800,
+          "accommodation": ["Mountain Lodges"],
+          "transportation": ["4x4 Vehicles", "Hiking"],
+          "rating": 4.9
+        },
+        {
+          "id": "cp_sa3",
+          "name": "Galapagos Island Cruise",
+          "image": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+          "location": {
+            "city": "Galapagos Islands",
+            "country": "Ecuador"
+          },
+          "price": 3500,
+          "accommodation": ["Cruise Ship"],
+          "transportation": ["Cruise Ship", "Zodiac Boats"],
+          "rating": 4.9
+        },
+        {
+          "id": "cp_sa4",
+          "name": "Inca Trail to Machu Picchu",
+          "image": "https://images.unsplash.com/photo-1526392060635-9d6019884377?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+          "location": {
+            "city": "Cusco",
+            "country": "Peru"
+          },
+          "price": 1800,
+          "accommodation": ["Camping", "Hotels"],
+          "transportation": ["Hiking", "Train"],
+          "rating": 4.8
+        },
+        {
+          "id": "cp_sa5",
+          "name": "Rio de Janeiro Carnival Experience",
+          "image": "https://images.unsplash.com/photo-1518639192441-8fce0a366e2e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+          "location": {
+            "city": "Rio de Janeiro",
+            "country": "Brazil"
+          },
+          "price": 2500,
+          "accommodation": ["Hotels"],
+          "transportation": ["Metro", "Walking Tours"],
+          "rating": 4.7
+        }
+      ],
+      "Oceania": [
+        {
+          "id": "cp_oc1",
+          "name": "Great Barrier Reef Diving",
+          "image": "https://images.unsplash.com/photo-1560750133-c5d4ef4de911?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+          "location": {
+            "city": "Cairns",
+            "country": "Australia"
+          },
+          "price": 2800,
+          "accommodation": ["Beach Resorts"],
+          "transportation": ["Boat", "Diving"],
+          "rating": 4.9
+        },
+        {
+          "id": "cp_oc2",
+          "name": "New Zealand Lord of the Rings Tour",
+          "image": "https://images.unsplash.com/photo-1506146332389-18140dc7b2fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "location": {
+          "city": "Matamata",
+          "country": "New Zealand"
+        },
+        "price": 2500,
+        "accommodation": ["Hobbit Holes", "Lodges"],
+        "transportation": ["Tour Bus", "Walking Tours"],
+        "rating": 4.8
+      },
+      {
+        "id": "cp_oc3",
+        "name": "Fiji Island Hopping",
+        "image": "https://images.unsplash.com/photo-1589179447852-768e0783e5f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "location": {
+          "city": "Nadi",
+          "country": "Fiji"
+        },
+        "price": 3000,
+        "accommodation": ["Overwater Bungalows", "Beach Resorts"],
+        "transportation": ["Boat", "Seaplane"],
+        "rating": 4.7
+      },
+      {
+        "id": "cp_oc4",
+        "name": "Tasmania Wilderness Explorer",
+        "image": "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "location": {
+          "city": "Hobart",
+          "country": "Australia"
+        },
+        "price": 2300,
+        "accommodation": ["Eco Lodges", "Camping"],
+        "transportation": ["4x4 Vehicles", "Hiking"],
+        "rating": 4.6
+      },
+      {
+        "id": "cp_oc5",
+        "name": "Polynesian Cultural Experience",
+        "image": "https://images.unsplash.com/photo-1583165583586-3fd3bba3c528?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+        "location": {
+          "city": "Papeete",
+          "country": "French Polynesia"
+        },
+        "price": 3500,
+        "accommodation": ["Overwater Bungalows"],
+        "transportation": ["Boat", "Outrigger Canoe"],
+        "rating": 4.8
+      }
+    ]
+  }
+}

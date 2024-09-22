@@ -1,5 +1,6 @@
 import React, { useCallback, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom"; // Add this import
 import "./Home.css";
 import "./Media.css";
 import img1 from "../../assets/img/img1.jpg";
@@ -127,9 +128,11 @@ const Home = () => {
             weave through secret alleys and iconic landmarks, transforming your 
             wanderlust into expertly curated, off-the-beaten-path adventures.
           </motion.p>
-          <motion.button className="book-tour" variants={itemVariants}>
-            Book a Tour
-          </motion.button>
+          <Link to="/about"> {/* Add this Link component */}
+            <motion.button className="book-tour" variants={itemVariants}>
+              Book a Tour
+            </motion.button>
+          </Link>
         </motion.div>
         
         <motion.div className="image-container" variants={containerVariants}>

@@ -19,7 +19,7 @@ right: 80px; /* Positioned right next to the sidebar toggle button */
 }
 
 .search-input::placeholder {
-  color: rgba(253, 13, 13, 0.7)
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .search-button {

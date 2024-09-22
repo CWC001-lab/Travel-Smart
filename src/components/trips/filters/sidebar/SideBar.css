@@ -106,3 +106,18 @@ button:hover {
 .checkbox-container label {
   cursor: pointer;
 }
+
+.tour-types-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-container label {
+  margin-left: 5px;
+}

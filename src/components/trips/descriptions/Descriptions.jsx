@@ -1,9 +1,13 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FaTimes } from 'react-icons/fa';
 import './Descriptions.css';
 
 const Descriptions = ({ place, onClose }) => {
   if (!place) return null;
+
+  const accommodationTypes = place.accommodationType || place.accommodation || [];
+  const transportationTypes = place.localTransportation || place.transportation || [];
 
   return (
     <motion.div
@@ -20,13 +24,24 @@ const Descriptions = ({ place, onClose }) => {
         exit={{ scale: 0.8, opacity: 0 }}
         onClick={(e) => e.stopPropagation()}
       >
-        <h2>{place.name}</h2>
-        <p><strong>Country:</strong> {place.country}</p>
-        <p><strong>Location:</strong> {place.location}</p>
-        <p><strong>Rating:</strong> {place.rating} ⭐</p>
-        <p><strong>Tour Types:</strong> {place.tourTypes.join(', ')}</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <button onClick={onClose}>Close</button>
+        <button className="close-button" onClick={onClose}>
+          <FaTimes />
+        </button>
+        <div className="description-flex">
+          <div className="description-image">
+            <img src={place.image} alt={place.name} />
+          </div>
+          <div className="description-details">
+            <h2>{place.name}</h2>
+            <p><strong>Location:</strong> {place.location.city || place.location.place}, {place.location.country}</p>
+            <p><strong>Rating:</strong> {place.rating} ⭐</p>
+            <p><strong>Price:</strong> ${place.price}</p>
+            {place.description && <p><strong>Description:</strong> {place.description}</p>}
+            {accommodationTypes.length > 0 && <p><strong>Accommodation:</strong> {accommodationTypes.join(', ')}</p>}
+            {transportationTypes.length > 0 && <p><strong>Transportation:</strong> {transportationTypes.join(', ')}</p>}
+            {place.tourType && <p><strong>Tour Type:</strong> {place.tourType.join(', ')}</p>}
+          </div>
+        </div>
       </motion.div>
     </motion.div>
   );

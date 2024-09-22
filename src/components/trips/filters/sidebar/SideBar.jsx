@@ -3,31 +3,35 @@ import { motion } from 'framer-motion';
 import { FaFilter, FaTimes } from 'react-icons/fa';
 import './SideBar.css';
 
-const continents = [
-  { code: '', name: 'All Continents' },
-  { code: 'Africa', name: 'Africa' },
-  { code: 'Asia', name: 'Asia' },
-  { code: 'Europe', name: 'Europe' },
-  { code: 'North America', name: 'North America' },
-  { code: 'South America', name: 'South America' },
-  { code: 'Oceania', name: 'Oceania' },
+// const continents = [
+//   { code: '', name: 'All Continents' },
+//   { code: 'Europe', name: 'Europe' },
+//   { code: 'Asia', name: 'Asia' },
+//   { code: 'Africa', name: 'Africa' },
+//   { code: 'North America', name: 'North America' },
+//   { code: 'South America', name: 'South America' },
+//   { code: 'Oceania', name: 'Oceania' },
+// ];
+
+const countries = [
+  'All Countries', 'France', 'Peru', 'China', 'Greece', 'United States', 'Tanzania', 'Japan',
+  'Norway', 'Cambodia', 'Indonesia', 'Maldives', 'Morocco', 'Uganda', 'Egypt', 'South Africa',
+  'Zambia', 'Canada', 'Mexico', 'Brazil', 'Argentina', 'Ecuador', 'Australia', 'New Zealand',
+  'Fiji', 'French Polynesia'
 ];
 
 const tourTypes = [
-  'cultural', 'adventure', 'luxury', 'eco-friendly', 'historical', 'culinary',
-  'wildlife', 'beach', 'urban exploration', 'spiritual', 'photography',
-  'volunteer', 'educational', 'romantic', 'family-friendly', 'solo travel',
-  'backpacking', 'art and museum', 'festival', 'sports and recreation'
+  'Sightseeing', 'Cultural', 'Historical', 'Adventure', 'Beach', 'Nature'
 ];
 
-const Sidebar = ({ onFilterChange, isOpen, toggleSidebar }) => {
+const Sidebar = ({ onFilterChange, isOpen, toggleSidebar, initialCountry }) => {
   const [rating, setRating] = useState(0);
-  const [continent, setContinent] = useState('');
+  const [country, setCountry] = useState(initialCountry || '');
   const [selectedTourTypes, setSelectedTourTypes] = useState([]);
 
   useEffect(() => {
-    onFilterChange({ rating, continent, tourTypes: selectedTourTypes });
-  }, [rating, continent, selectedTourTypes, onFilterChange]);
+    onFilterChange({ rating, country, tourTypes: selectedTourTypes });
+  }, [rating, country, selectedTourTypes, onFilterChange]);
 
   const handleTourTypeChange = (type) => {
     setSelectedTourTypes(prev => 
@@ -45,6 +49,7 @@ const Sidebar = ({ onFilterChange, isOpen, toggleSidebar }) => {
       >
         {isOpen ? <FaTimes /> : <FaFilter />}
       </motion.button>
+      
       <motion.div
         className="sidebar"
         initial={false}
@@ -53,18 +58,21 @@ const Sidebar = ({ onFilterChange, isOpen, toggleSidebar }) => {
       >
         <div className="sidebar-content">
           <h2 className="sidebar-title">Explore Destinations</h2>
-          <div className="filter-group continent-select">
-            <label htmlFor="continent">Select Continent</label>
+          
+          <div className="filter-group country-select">
+            <label htmlFor="country">Select Country</label>
             <select
-              id="continent"
-              value={continent}
-              onChange={(e) => setContinent(e.target.value)}
+              id="country"
+              value={country}
+              onChange={(e) => setCountry(e.target.value)}
             >
-              {continents.map((c) => (
-                <option key={c.code} value={c.code}>{c.name}</option>
+              <option value="">All Countries</option>
+              {countries.map((c) => (
+                <option key={c} value={c}>{c}</option>
               ))}
             </select>
           </div>
+
           <div className="filter-group rating-slider">
             <label htmlFor="rating">Minimum Rating: {rating} ⭐</label>
             <input
@@ -82,19 +90,22 @@ const Sidebar = ({ onFilterChange, isOpen, toggleSidebar }) => {
               <span>5</span>
             </div>
           </div>
+
           <div className="filter-group tour-types">
             <h3>Tour Types</h3>
-            {tourTypes.map(type => (
-              <div key={type} className="checkbox-container">
-                <input
-                  type="checkbox"
-                  id={type}
-                  checked={selectedTourTypes.includes(type)}
-                  onChange={() => handleTourTypeChange(type)}
-                />
-                <label htmlFor={type}>{type}</label>
-              </div>
-            ))}
+            <div className="tour-types-grid">
+              {tourTypes.map(type => (
+                <div key={type} className="checkbox-container">
+                  <input
+                    type="checkbox"
+                    id={type}
+                    checked={selectedTourTypes.includes(type)}
+                    onChange={() => handleTourTypeChange(type)}
+                  />
+                  <label htmlFor={type}>{type}</label>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </motion.div>
